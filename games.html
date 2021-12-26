@@ -1,68 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <link rel="preload" href="shark.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>選擇章節</title>
+    <script src="footer.js"></script>
     <style>
-        body{
-            margin:0px;
-            padding: 0px;
-        }
-        header{
-            height: calc(100vh/8);
-            width: 100vw;
-            padding-top: 5px;
-            padding-left: 5px;
-        }
-        section{
-            height: calc(100vh*7/8);
-            width: 100vw;
-        }
-        .everyCut{
-            height:100%;
+        .everyCut {
+            height: 100%;
             width: calc(100%/3);
             float: left;
             text-align: center;
             padding: 15px;
         }
-        .everyCutPhoto{
-            width:100%;
+        
+        .everyCutPhoto {
+            width: 100%;
             border: 3px solid black;
         }
-        footer{
-            position: fixed;
-            bottom: 0px;
-            width: 100vw;
-        }
-        .footerLeft{
-            float: left;
-            text-align: center;
-            margin-bottom: 5px;
-            margin-left: 5px;
-        }
-        .footerRight{
-            float: right;
-            text-align: center;
-            margin-bottom: 5px;
-            margin-right: 5px;
+        
+        .everyCutPhoto:hover {
+            border: 6px solid black;
         }
     </style>
     <script>
-        $(document).ready(function(){
-            $('#backButton').click(function(){
-                window.location.href="menu.html";
+        $(document).ready(function() {
+            $('#backButton').click(function() {
+                window.location.href = "menu.html";
             });
-            $('#docButton').click(function(){
-                window.location.href="網站介面.pptx";
+
+
+            $('#shootGame').click(function() {
+                window.location.href = "shoot.html";
             })
         });
     </script>
 </head>
+
 <body>
     <header>
         <h1 style="font-size:4em">遊戲橋段選擇</h1>
@@ -71,8 +51,8 @@
         <div style="float:left;height:100%;width:10%;"></div>
         <div style="float:left;height:85%;width:80%;">
             <div style="height:50%;width:100%;">
-                <div class="everyCut">
-                    <h3>遊戲1</h3>
+                <div id="shootGame" class="everyCut">
+                    <h3>射擊遊戲</h3>
                     <img src="shark.png" class="everyCutPhoto">
                 </div>
                 <div class="everyCut">
@@ -126,4 +106,5 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+
 </html>

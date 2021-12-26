@@ -1,50 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="stylesheet.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>網站(故事)標題</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="footer.js"></script>
     <style>
-        body{
-            margin:0px;
-            padding: 0px;
-        }
-        .three{
+        .three {
             height: calc(100vh/3);
             width: 100vw;
         }
-        .threeThree{
+        
+        .threeThree {
             height: calc(100%/2);
             width: 100%;
         }
-        footer{
-            position: fixed;
-            bottom: 0px;
-            width: 100vw;
-        }
-        .footerContainer{
-            float: right;
-            text-align: center;
-            margin-bottom: 5px;
-            margin-right: 5px;
-        }
     </style>
     <script>
-        $(document).ready(function(){
-            $('#startButton').click(function(){
-                location.href="menu.html";
-            })
-            $('#docButton').click(function(){
-                location.href="網站介面.pptx";
-            })
+        $(document).ready(function() {
+            $('#startButton').click(function() {
+                location.href = "menu.html";
+            });
         });
     </script>
 </head>
+
 <body>
     <div class="three">
     </div>
@@ -59,7 +45,7 @@
     <div class="three">
     </div>
     <footer>
-        <div class="footerContainer">
+        <div class="footerRight">
             <button id="docButton" type="button" class="btn btn-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-file-earmark-text-fill" viewBox="0 0 16 16">
                     <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z"/>
@@ -73,4 +59,5 @@
         </div>
     </footer>
 </body>
+
 </html>

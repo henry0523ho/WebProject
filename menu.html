@@ -1,101 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <link rel="preload" href="shark.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>網站(故事)標題</title>
+    <script src="footer.js"></script>
     <style>
-        body{
-            margin:0px;
-            padding: 0px;
-        }
-        header{
-            height: calc(100vh/8);
-            width: 100vw;
-            padding-top: 5px;
-            padding-left: 5px;
-        }
-        section{
-            height: calc(100vh*7/8);
-            width: 100vw;
-        }
-        aside{
+        aside {
             text-align: center;
             float: left;
             width: 55vw;
             height: 100%;
-            /* background-color:blue; */
         }
-        article{
+        
+        article {
             float: right;
-            width:45vw;
+            width: 45vw;
             height: 100%;
-            /* background-color: red; */
         }
-        .articlePhoto{
-            width:100%;
+        
+        .articlePhoto {
+            width: 100%;
             border: 5px solid black;
             border-width: 10px;
             border-radius: 10px;
         }
-        .articleText{
+        
+        .articleText {
             width: 100%;
             text-align: center;
         }
-        footer{
-            position: fixed;
-            bottom: 0px;
-            width: 100vw;
-        }
-        .footerLeft{
-            float: left;
-            text-align: center;
-            margin-bottom: 5px;
-            margin-left: 5px;
-        }
-        .footerRight{
-            float: right;
-            text-align: center;
-            margin-bottom: 5px;
-            margin-right: 5px;
-        }
     </style>
     <script>
-        $(document).ready(function(){
-            $('#backButton').click(function(){
-                window.location.href="home.html";
+        $(document).ready(function() {
+            $('#backButton').click(function() {
+                window.location.href = "home.html";
             });
-            $('#docButton').click(function(){
-                window.location.href="網站介面.pptx";
-            })
-            $('#selectParagraphButton').click(function(){
-                window.location.href="chapter.html";
+
+            $('#startGameButton').click(function() {
+                window.location.href = "story.html";
             });
-            $('#selectGameButton').click(function () {
+            $('#selectParagraphButton').click(function() {
+                window.location.href = "chapter.html";
+            });
+            $('#selectGameButton').click(function() {
                 window.location.href = "games.html";
             });
-            $('#startGameButton').mouseenter(function(){
-                $('#startGameArticle').css('display','block');
-            }).mouseleave(function(){
+
+            $('#startGameButton').mouseenter(function() {
+                $('#startGameArticle').css('display', 'block');
+            }).mouseleave(function() {
                 $('#startGameArticle').css('display', 'none');
             });
-            $('#selectParagraphButton').mouseenter(function () {
+            $('#selectParagraphButton').mouseenter(function() {
                 $('#selectParagraphArticle').css('display', 'block');
-            }).mouseleave(function () {
+            }).mouseleave(function() {
                 $('#selectParagraphArticle').css('display', 'none');
             });
-            $('#selectGameButton').mouseenter(function () {
+            $('#selectGameButton').mouseenter(function() {
                 $('#selectGameArticle').css('display', 'block');
-            }).mouseleave(function () {
+            }).mouseleave(function() {
                 $('#selectGameArticle').css('display', 'none');
             });
         });
     </script>
 </head>
+
 <body>
     <header>
         <h1 style="font-size:4em">網站(故事)標題</h1>
@@ -173,4 +149,5 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+
 </html>
