@@ -1,0 +1,33 @@
+.gameObject {
+    position: relative;
+}
+
+.UI {
+    position: relative;
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 10%;
+    background-color: green;
+    text-align: center;
+}
+
+#Win {
+    position: fixed;
+    text-align: center;
+    top: 45%;
+    height: 10%;
+    display: none;
+    width: 100%;
+}
+
+@keyframes hit {
+    from {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: rotateY(720deg);
+        opacity: 0;
+    }
+}
