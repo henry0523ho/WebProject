@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheet/stylesheet.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網站(故事)標題</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script/footer.js"></script>
+    <script>
+        function start() {
+            localStorage.setItem('soundState', '0');
+            var prev = 0;
+            var cur;
+            var sounds = document.getElementById("soundManager");
+            addEventListener('storage', function(e) {
+                console.log(localStorage.getItem('soundState'));
+                cur = localStorage.getItem('soundState');
+                if (cur != prev) {
+                    if (cur == 1) {
+                        sounds.play();
+                    } else {
+                        sounds.pause();
+                    }
+                    prev = cur;
+                }
+            })
+
+        }
+        window.addEventListener('load', start, false);
+    </script>
+</head>
+
+<body>
+    <audio id="soundManager" controls="controls" autoplay="autoplay" controls="controls" hidden="hidden">
+		<source src="src/gura.mp3" type="audio/mp3">
+	</audio>
+    <iframe src="pages/home.html" style="width:100vw;height: 100vh;border:0 none;margin:0px;overflow: hidden;" scrolling="no">
+</body>
+
+</html>
