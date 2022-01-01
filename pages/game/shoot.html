@@ -18,11 +18,13 @@
     </style>
     <script>
         $(document).ready(function() {
-            console.log(window.innerWidth, window.innerHeight);
+            setSoundGame();
             $('#backButton').click(function() {
+                setSoundNormal();
                 window.location.href = "../menu.html";
             });
             $('#finishButton').click(function() {
+                setSoundNormal();
                 window.location.href = "../story/story.html";
             });
         });

@@ -12,21 +12,29 @@
     <script src="script/footer.js"></script>
     <script>
         function start() {
-            localStorage.setItem('soundState', '0');
-            var prev = 0;
+            var soundInfo = {
+                'state': '0',
+                'env': '0',
+            };
+            localStorage.setItem('sound', JSON.stringify(soundInfo));
+            var prev = 1;
             var cur;
-            var sounds = document.getElementById("soundManager");
+            var soundMG = document.getElementById("soundManager");
             addEventListener('storage', function(e) {
-                console.log(localStorage.getItem('soundState'));
-                cur = localStorage.getItem('soundState');
-                if (cur != prev) {
+                let sound = JSON.parse(localStorage.getItem('sound'));
+                if (sound['env'] == 1) {
+                    soundMG.pause();
+                } else {
+                    cur = sound['state'];
                     if (cur == 1) {
-                        sounds.play();
+                        soundMG.play();
                     } else {
-                        sounds.pause();
+                        soundMG.pause();
                     }
                     prev = cur;
                 }
+
+
             })
 
         }
