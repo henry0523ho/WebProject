@@ -12,11 +12,6 @@
     <script src="script/footer.js"></script>
     <script>
         function start() {
-            var soundInfo = {
-                'state': '0',
-                'env': '0',
-            };
-            localStorage.setItem('sound', JSON.stringify(soundInfo));
             var prev = 1;
             var cur;
             var soundMG = document.getElementById("soundManager");
@@ -27,14 +22,13 @@
                 } else {
                     cur = sound['state'];
                     if (cur == 1) {
+                        soundMG.volume = 0.1;
                         soundMG.play();
                     } else {
                         soundMG.pause();
                     }
                     prev = cur;
                 }
-
-
             })
 
         }
@@ -43,7 +37,7 @@
 </head>
 
 <body>
-    <audio id="soundManager" controls="controls" autoplay="autoplay" controls="controls" hidden="hidden">
+    <audio id="soundManager" controls="controls" autoplay="autoplay" controls="controls" hidden="hidden" preload="auto" volume="0.1">
 		<source src="src/gura.mp3" type="audio/mp3">
 	</audio>
     <iframe src="pages/home.html" style="width:100vw;height: 100vh;border:0 none;margin:0px;overflow: hidden;" scrolling="no">
