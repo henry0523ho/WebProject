@@ -1,0 +1,49 @@
+#fullScreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+#gameBoard {
+    margin: auto;
+    margin-top: 5vh;
+    height: 80vh;
+    width: 80vh;
+    /* background-color: red; */
+}
+
+.gameCell {
+    float: left;
+    height: calc(100%/3);
+    width: calc(100%/3);
+    padding: 20px;
+    /* background-color: blue; */
+}
+
+#P1,
+#P2,
+#P3,
+#P4,
+#P5,
+#P6 {
+    border-bottom: 5px solid black;
+}
+
+#P1,
+#P2,
+#P4,
+#P5,
+#P7,
+#P8 {
+    border-right: 5px solid black;
+}
+
+#winUI {
+    position: fixed;
+    display: none;
+    top: 40vh;
+    height: 20vh;
+    width: 100vw;
+    margin: auto;
+    text-align: center;
+    background-color: red;
+}
