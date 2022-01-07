@@ -1,3 +1,24 @@
-body {
-    margin: 0px;
+#choicesDiv {
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+}
+
+.choiceImg {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+#picture {
+    width: 100vw;
+    height: 60vh;
+}
+
+#backSection {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
 }

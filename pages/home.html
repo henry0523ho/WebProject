@@ -11,14 +11,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../script/footer.js"></script>
     <style>
-        .three {
-            height: calc(100vh/3);
+        #homeTitle {
+            position: fixed;
             width: 100vw;
-        }
-        
-        .threeThree {
-            height: calc(100%/2);
-            width: 100%;
+            top: 50vh;
+            text-align: center;
         }
     </style>
     <script>
@@ -32,18 +29,16 @@
 </head>
 
 <body>
-    <div class="three">
-    </div>
-    <div class="three" style="text-align: center; ">
-        <div class="threeThree">
+
+    <div id="homeTitle" style="text-align: center; ">
+        <div>
             <h1 style="font-size: 5em;">網站(故事)標題</h1>
         </div>
         <div class="threeThree">
             <button id="startButton" type="button" class="btn btn-primary btn-lg"><h2 style="font-size:2em;">故事開始</h2></button>
         </div>
     </div>
-    <div class="three">
-    </div>
+
     <!-- <footer> -->
     <div class="footerRight">
         <button id="docButton" type="button" class="btn btn-primary">

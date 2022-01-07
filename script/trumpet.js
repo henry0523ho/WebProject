@@ -85,7 +85,7 @@ function playTrumpet() {
     checkGameSound();
     console.log(checkPoint);
     if (checkPistonState()) {
-        $('#trumpetScale').attr('src', "../../src/trumpet/" + ANSSounds[checkPoint] + ".wav");
+        $('#trumpetScale').attr('src', "../../src/trumpet/" + ANSSounds[checkPoint] + ".mp3");
         document.getElementById('trumpetScale').play();
         let note = "#note";
         note += ANSSounds[checkPoint];
