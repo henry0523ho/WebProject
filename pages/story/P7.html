@@ -23,12 +23,12 @@
                 window.location.href = "../menu.html";
             });
             $('.textSection').click(function() {
-                if (state != 2) {
+                if (state != 7) {
                     $(getSection()).css('display', 'none');
                     ++state;
                     $(getSection()).css('display', 'block');
                 } else {
-                    window.location.href = "P7.html";
+                    window.location.href = "P8.html";
                 }
             });
         });
@@ -37,17 +37,66 @@
 
 <body>
     <section>
-        <div class="backSection" style="background-image: url('../../src/story/gym.jpg');background-size: cover;">
+        <div class="backSection" style="background-image: url('../../src/story/activityCenter.bmp');">
             <div id="S1" style="display:block">
+                <div class="titleSection">
+                    <div class="titleText">活動中心</div>
+                </div>
                 <div class="textSection">
-                    <div class="speakerName">優子</div>
-                    <div class="speakerText">看來你很快就上手了嘛，看來我們離比賽第一名也越來越近了! 對了 順帶跟你講一下，我們的目標是拿全國第一，也就是說我們要拚盡全力練習，不知道你想不想成為我們的一份子?</div>
                 </div>
             </div>
             <div id="S2" style="display:none">
                 <div class="textSection">
+                    <div class="speakerText">
+                        (音樂聲)
+                    </div>
+                </div>
+            </div>
+            <div id="S3" style="display:none">
+                <div class="photoSection">
+                    <div class="peopleOne" style="background-image: url('../../src/story/yo.png');">
+                    </div>
+                </div>
+                <div class="textSection">
+                    <div class="speakerName">優子</div>
+                    <div class="speakerText">
+                        好了 今天差不多就練習到這邊，距離全國大賽越來越近了，我們也要加把勁
+                    </div>
+                </div>
+            </div>
+            <div id="S4" style="display:none">
+                <div class="photoSection">
+                    <div class="peopleTwo" style="background-image: url('../../src/story/mizore.png');background-position: right;">
+                    </div>
+                    <div class="peopleTwo" style="background-image: url('../../src/story/kumiko2.png');left: 50vw;background-position: left;">
+                    </div>
+                </div>
+                <div class="textSection">
+                    <div class="speakerName">其他社員</div>
+                    <div class="speakerText">
+                        喔!!!
+                    </div>
+                </div>
+            </div>
+            <div id="S5" style="display:none">
+                <div class="textSection">
                     <div class="speakerName">阿明</div>
-                    <div class="speakerText">雖然不確定自己辦不辦的到，但是我會全力以赴的!</div>
+                    <div class="speakerText">...
+                    </div>
+                </div>
+            </div>
+            <div id="S6" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">阿明</div>
+                    <div class="speakerText">沒想到今天竟然練到下午
+                    </div>
+                </div>
+            </div>
+            <div id="S7" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">阿明</div>
+                    <div class="speakerText">(下禮拜就要段考了，但我之前不是跟室友打電動就是去社團練習，根本就沒有時間去念書，到底該怎麼辦~)
+                    </div>
                 </div>
             </div>
         </div>

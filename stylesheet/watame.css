@@ -1,5 +1,4 @@
 #choicesDiv {
-    height: 40vh;
     display: flex;
     justify-content: center;
 }
@@ -10,15 +9,63 @@
     width: 100px;
     height: 100px;
     margin: 20px;
+    border-radius: 50px;
 }
 
 #picture {
     width: 100vw;
-    height: 60vh;
+    height: 70vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #backSection {
     width: 100vw;
     height: 100vh;
     background-size: cover;
+}
+
+#herANS {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    left: 70%;
+    top: 40vh;
+    border-radius: 50px;
+}
+
+#titleSection {
+    position: fixed;
+    width: 100vw;
+    height: 20vh;
+    top: 40vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 30px;
+    font-size: 20px;
+}
+
+#finishSection {
+    position: fixed;
+    width: 100vw;
+    height: 30vh;
+    top: 40vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 30px;
+    font-size: 20px;
+    color: white;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

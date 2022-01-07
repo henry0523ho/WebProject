@@ -41,6 +41,19 @@ section {
     background-position: bottom;
 }
 
+.peopleTwo {
+    width: 50%;
+    /* height: 70%; */
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    /* top: 10%; */
+    bottom: 0;
+    background-size: contain;
+    background-position: bottom;
+}
+
 .speakerName {
     position: absolute;
     top: -25px;

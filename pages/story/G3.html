@@ -4,22 +4,14 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../stylesheet/stylesheet.css">
-    <link rel="stylesheet" href="../../stylesheet/watame.css">
-    <link rel="preload" href="../../src/watame/watame0.png" as="image">
-    <link rel="preload" href="../../src/watame/watame1.png" as="image">
-    <link rel="preload" href="../../src/watame/watame2.png" as="image">
-    <link rel="preload" href="../../src/watame/watame3.png" as="image">
-    <link rel="preload" href="../../src/watame/paper.png" as="image">
-    <link rel="preload" href="../../src/watame/sissor.png" as="image">
-    <link rel="preload" href="../../src/watame/stone.png" as="image">
-    <link rel="preload" href="../../src/watame/unknown.png" as="image">
+    <link rel="stylesheet" href="../../stylesheet/snake.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>綿羊猜拳機</title>
+    <title>貪食蛇</title>
     <script src="../../script/footer.js"></script>
-    <script src="../../script/watame.js"></script>
+    <script src="../../script/snake.js"></script>
     <style>
 
     </style>
@@ -32,45 +24,27 @@
             });
             $('#finishButton').click(function() {
                 setSoundNormal();
-                window.location.href = "../story/story.html";
+                window.location.href = "../story/P9.html";
             });
         });
     </script>
 </head>
 
 <body>
-    <audio id="watameBgm" hidden="hidden" preload="auto" src="../../src/watame/bgm.wav">
-    </audio>
-    <div id="backSection" style="background-image: url(../../src/watame/background.jpg)">
-        <div id="picture" style="background-image: url(../../src/watame/watame0.png)">
-            <div id="herANS" style="background-image: url(../../src/watame/unknown.png)"></div>
-        </div>
-        <div id="choicesDiv">
-            <div id="sissor" class="choiceImg" style="background-image: url(../../src/watame/sissor.png) "></div>
-            <div id="stone" class="choiceImg" style="background-image: url(../../src/watame/stone.png) "></div>
-            <div id="paper" class="choiceImg" style="background-image: url(../../src/watame/paper.png) "></div>
-        </div>
+    <div id="UI">
+        <h1 id="score">Level:1</h1>
     </div>
-
-    <div id="titleSection">
-        <button id="startButton" type="button" class="btn btn-primary ">
-            <svg style="float: left" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>
-            <h1 style="float: left">開始猜拳</h1>
-        </button>
-    </div>
-    <div id="finishSection" style="display: none">
-        <h1 id="finishText"></h1>
+    <div id="gameBoard"></div>
+    <div id="stopScreen">
+        <h1 id="stopText"></h1>
         <button id="finishButton" type="button " class="btn btn-primary ">
                 <svg xmlns="http://www.w3.org/2000/svg " width="50px " height="50px " fill="currentColor "
                     class="bi bi-arrow-left " viewBox="0 0 16 16 ">
                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
             </button>
     </div>
-
-
-
-    <div class="footerLeft">
-        <button id="backButton" type="button" class="btn btn-primary">
+    <div class="footerLeft ">
+        <button id="backButton" type="button " class="btn btn-primary ">
                 <svg xmlns="http://www.w3.org/2000/svg " width="50px " height="50px " fill="currentColor "
                     class="bi bi-arrow-left " viewBox="0 0 16 16 ">
                     <path fill-rule="evenodd "
@@ -78,13 +52,13 @@
                 </svg>
             </button>
     </div>
-    <div class="footerRight">
-        <button id="soundButton" type="button" class="btn btn-primary">
+    <div class="footerRight ">
+        <button id="soundButton" type="button " class="btn btn-primary ">
                 <svg xmlns="http://www.w3.org/2000/svg " width="50px " height="50px " fill="currentColor "
                     class="bi bi-volume-down-fill " viewBox="0 0 16 16 ">
                     <path
                         d="M9 4a.5.5 0 0 0-.812-.39L5.825 5.5H3.5A.5.5 0 0 0 3 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 9 12V4zm3.025 4a4.486 4.486 0 0 1-1.318 3.182L10 10.475A3.489 3.489 0 0 0 11.025 8 3.49 3.49 0 0 0 10 5.525l.707-.707A4.486
-            4.486 0 0 1 12.025 8z " />
+        4.486 0 0 1 12.025 8z " />
                 </svg>
             </button>
     </div>

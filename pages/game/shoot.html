@@ -14,7 +14,9 @@
     <script src="../../script/footer.js"></script>
     <script src="../../script/shoot.js"></script>
     <style>
-
+        #gameSection {
+            cursor: url('../../src/shoot/aim.png'), auto;
+        }
     </style>
     <script>
         $(document).ready(function() {
@@ -31,12 +33,14 @@
     </script>
 </head>
 
-<body>
-    <div class="fullScreenGame" style="background-image: url('../../src/shoot/background.jpg');background-size: cover;">
+<body id="body">
+
+
+    <div id="gameSection" style="background-image: url('../../src/shoot/background.jpg');">
         <div id="UI" class="UI">
             <h1>0/20</h1>
         </div>
-        <img id="target" class="gameObject" src="../../src/shark.png" style="top:100px;left:100px;height:100px;width:100px;animation-name:none;animation-duration: 1s;animation-timing-function: ease;">
+        <img id="target" class="gameObject" src="../../src/shoot/enemy2.jpg" style="top:100px;left:100px;height:100px;width:auto;animation-name:none;animation-duration: 1s;animation-timing-function: ease;">
 
     </div>
     <div id="Win">

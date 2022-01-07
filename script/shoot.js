@@ -3,7 +3,6 @@ var ScreenHeight = window.innerHeight;
 var score = 0;
 
 $(document).ready(function() {
-    console.log(window.innerWidth, window.innerHeight);
     startGame();
     $('#target').click(function() {
         ++score;
@@ -28,6 +27,8 @@ $(document).ready(function() {
             $('#Win').css('display', 'block');
         }
     });
+
+
 });
 
 function startGame() {
