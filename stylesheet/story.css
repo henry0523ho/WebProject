@@ -19,6 +19,8 @@ section {
 
 .textSection {
     position: fixed;
+    padding-left: 15vw;
+    padding-right: 15vw;
     bottom: 0;
     height: 30vh;
     width: 100vw;
@@ -33,4 +35,43 @@ section {
     position: relative;
     left: 35%;
     top: 10%;
+}
+
+.speakerName {
+    position: absolute;
+    top: -25px;
+    /* width: 150px; */
+    /* height: 50px; */
+    background-color: #e21192;
+    border: 3px solid white;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    font-size: 30px;
+}
+
+.speakerText {
+    color: #ffffff;
+    font-size: 20px;
+    position: absolute;
+    padding: 40px;
+}
+
+.titleSection {
+    position: fixed;
+    top: 30vh;
+    width: 100vw;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.titleText {
+    color: black;
+    font-size: 50px;
+    text-align: center;
 }

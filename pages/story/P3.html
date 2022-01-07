@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../stylesheet/stylesheet.css">
     <link rel="stylesheet" href="../../stylesheet/story.css">
-    <link rel="preload" href="../../src/shark.png" as="image">
+    <link rel="preload" href="../../src/story/bedroom.bmp" as="image">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,31 +17,51 @@
 
     </style>
     <script>
+        let state = 1;
         $(document).ready(function() {
             $('#backButton').click(function() {
                 window.location.href = "../menu.html";
             });
             $('.textSection').click(function() {
-                window.location.href = "P.html";
-            })
+                if (state != 4) {
+                    $(getSection()).css('display', 'none');
+                    ++state;
+                    $(getSection()).css('display', 'block');
+                } else {
+                    window.location.href = "G1.html";
+                }
+            });
         });
     </script>
 </head>
 
 <body>
     <section>
-        <div class="backSection" style="background-image: url('../../src/shark.png')">
-            <div class="photoSection">
-                <div class="peopleOne" style="background-image: url('../../src/shark.png');">
-
+        <div class="backSection" style="background-image: url('../../src/story/bedroom.bmp');background-color:rgb(152, 152, 250)">
+            <div id="S1" style="display:block">
+                <div class="titleSection">
+                    <div class="titleText">宿舍房間</div>
+                </div>
+                <div class="textSection">
                 </div>
             </div>
-            <div class="titleSection" style="display: block">
-                <div class="titleText"></div>
+            <div id="S2" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">阿明</div>
+                    <div class="speakerText">欸欸 大家要不要一起打電動?!</div>
+                </div>
             </div>
-            <div class="textSection">
-                <div class="speakerName"></div>
-                <div class="speakerText"></div>
+            <div id="S3" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">彼得</div>
+                    <div class="speakerText">好啊好啊 當然可以啊</div>
+                </div>
+            </div>
+            <div id="S4" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">彼得</div>
+                    <div class="speakerText">我們開始玩吧!</div>
+                </div>
             </div>
         </div>
     </section>

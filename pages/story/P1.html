@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../stylesheet/stylesheet.css">
     <link rel="stylesheet" href="../../stylesheet/story.css">
-    <link rel="preload" href="../../src/shark.png" as="image">
+    <link rel="preload" href="../../src/story/square.bmp" as="image">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,31 +17,57 @@
 
     </style>
     <script>
+        let state = 1;
         $(document).ready(function() {
             $('#backButton').click(function() {
                 window.location.href = "../menu.html";
             });
             $('.textSection').click(function() {
-                window.location.href = "P.html";
-            })
+                if (state != 5) {
+                    $(getSection()).css('display', 'none');
+                    ++state;
+                    $(getSection()).css('display', 'block');
+                } else {
+                    window.location.href = "P2.html";
+                }
+            });
         });
     </script>
 </head>
 
 <body>
     <section>
-        <div class="backSection" style="background-image: url('../../src/shark.png')">
-            <div class="photoSection">
-                <div class="peopleOne" style="background-image: url('../../src/shark.png');">
-
+        <div class="backSection" style="background-image: url('../../src/story/square.bmp')">
+            <div id="S1" style="display:block">
+                <div class="titleSection">
+                    <div class="titleText">勝利大學 廣場</div>
+                </div>
+                <div class="textSection">
                 </div>
             </div>
-            <div class="titleSection" style="display: block">
-                <div class="titleText"></div>
+            <div id="S2" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName" style="display:none"></div>
+                    <div class="speakerText">大學，是人生的重要階段，是許多人能揮灑青春的地方</div>
+                </div>
             </div>
-            <div class="textSection">
-                <div class="speakerName"></div>
-                <div class="speakerText"></div>
+            <div id="S3" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">阿明</div>
+                    <div class="speakerText">不知道在這裡是否能交到要好的朋友</div>
+                </div>
+            </div>
+            <div id="S4" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">阿明</div>
+                    <div class="speakerText">不知道在這裡是否能交到要好的朋友</div>
+                </div>
+            </div>
+            <div id="S5" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">阿明</div>
+                    <div class="speakerText">啊! 等會有新生聚會，去看一下好了</div>
+                </div>
             </div>
         </div>
     </section>
