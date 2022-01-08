@@ -9,9 +9,11 @@ var dirX = [0, 0, 1, 0, -1];
 var dirY = [0, -1, 0, 1, 0];
 var snakeDir;
 var gameAble;
+var MXScore = 0;
 $(document).ready(function() {
     $(window).keydown(function(e) { checkKey(e) });
     $('#startButton').click(function() {
+        document.getElementById('bgm').play();
         $('#startScreen').css('display', 'none');
         $('#countDown').css('display', 'block');
         $('#countDownText').html('3');
@@ -27,6 +29,26 @@ $(document).ready(function() {
         }, 3000);
 
     });
+    $('#soundButton').click(function() {
+        checkGameSound();
+    })
+    $('#retryButton').click(function() {
+        score = 1;
+        showScore();
+        $('#stopScreen').css('display', 'none');
+        $('#countDown').css('display', 'block');
+        $('#countDownText').html('3');
+        setTimeout(function() {
+            $('#countDownText').html('2');
+        }, 1000);
+        setTimeout(function() {
+            $('#countDownText').html('1');
+        }, 2000);
+        setTimeout(function() {
+            $('#countDown').css('display', 'none');
+            init();
+        }, 3000);
+    })
 });
 
 
@@ -71,7 +93,7 @@ function init() {
     init_fruit();
     initMap();
     arrowKey = 1;
-    frameDuration = 100;
+    frameDuration = 500;
     gameFrame = window.setInterval(everyCycle, frameDuration);
 }
 
@@ -122,6 +144,7 @@ function clearMap() {
             let id = "#" + getId(i, j);
             $(id).css('background-color', 'green');
             $(id).css('background-image', 'none');
+            $(id).css('animation', 'none');
         }
     }
 }
@@ -141,8 +164,6 @@ function move_snake() {
             snakeX.dequeue();
             snakeY.dequeue();
         }
-
-
         snakeX.enqueue(newX);
         snakeY.enqueue(newY);
     }
@@ -159,7 +180,7 @@ function showSnake() {
         if (i == 0) {
             $(id).css("background-color", "navy");
         } else {
-            $(id).css("background-color", "blue");
+            $(id).css("animation", "rainbow 0.5s infinite alternate");
         }
     }
 }
@@ -168,12 +189,12 @@ let lastKey = 0;
 function eatFruit(y, x) {
     let ret = false;
     if (y == fruit.y && x == fruit.x) {
-
+        document.getElementById('getPoint').play();
+        clearInterval(gameFrame);
+        frameDuration *= 0.9
+        gameFrame = window.setInterval(everyCycle, frameDuration);
         ++score;
         showScore();
-        if (score == 10) {
-            endGame(1);
-        }
         init_fruit();
         ret = true;
     }
@@ -219,7 +240,6 @@ function checkKey(e) {
 
 
 function everyCycle() {
-    if (score >= 10) endGame(1);
     move_snake();
     clearMap();
     showFruit();
@@ -243,16 +263,30 @@ function showScore() {
 
 function endGame(x) {
     clearInterval(gameFrame);
-    console.log("End Game");
     $('#stopScreen').css('display', 'block');
     let endText = ""
     if (x == 0) {
-        endText = "Game Over!";
+        if (score > MXScore) MXScore = score;
+        document.getElementById('die').play();
+        endText = "Score:" + score + ",High Score:" + MXScore;
     } else if (x == 1) {
+        document.getElementById('getPoint').play();
         endText = "恭喜通關!";
     } else if (x == 2) {
         endText = "暫停";
     }
     $('#stopText').html(endText);
 
+}
+
+function checkGameSound() {
+    if (getSoundState() == "0") {
+        document.getElementById('bgm').muted = true;
+        document.getElementById('getPoint').muted = true;
+        document.getElementById('die').muted = true;
+    } else {
+        document.getElementById('bgm').muted = false;
+        document.getElementById('getPoint').muted = false;
+        document.getElementById('die').muted = false;
+    }
 }
