@@ -8,16 +8,21 @@
 #gameBoard {
     margin: auto;
     text-align: center;
-    height: calc(20px*23);
-    width: calc(20px*29);
-    background-color: red;
+    height: calc(30px*17);
+    width: calc(30px*21);
+    background-color: green;
+    border: 10px solid brown;
+    box-sizing: content-box;
+    border-radius: 10px;
 }
 
 .gameCell {
     float: left;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border: 1px solid black;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #stopScreen {
@@ -30,4 +35,26 @@
     color: white;
     display: none;
     text-align: center;
+}
+
+#startScreen {
+    position: fixed;
+    top: 40vh;
+    width: 100vw;
+    height: 30vh;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 50px;
+}
+
+#countDown {
+    position: fixed;
+    top: 40vh;
+    width: 100vw;
+    height: 30vh;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 50px;
 }

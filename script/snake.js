@@ -1,8 +1,8 @@
 var arrowKey;
 var gameFrame;
 var frameDuration;
-const gameWidth = 29;
-const gameHeight = 23;
+const gameWidth = 21;
+const gameHeight = 17;
 var score = 1;
 var fruit;
 var dirX = [0, 0, 1, 0, -1];
@@ -11,8 +11,22 @@ var snakeDir;
 var gameAble;
 $(document).ready(function() {
     $(window).keydown(function(e) { checkKey(e) });
-    init();
+    $('#startButton').click(function() {
+        $('#startScreen').css('display', 'none');
+        $('#countDown').css('display', 'block');
+        $('#countDownText').html('3');
+        setTimeout(function() {
+            $('#countDownText').html('2');
+        }, 1000);
+        setTimeout(function() {
+            $('#countDownText').html('1');
+        }, 2000);
+        setTimeout(function() {
+            $('#countDown').css('display', 'none');
+            init();
+        }, 3000);
 
+    });
 });
 
 
@@ -58,8 +72,6 @@ function init() {
     initMap();
     arrowKey = 1;
     frameDuration = 100;
-    // everyCycle();
-
     gameFrame = window.setInterval(everyCycle, frameDuration);
 }
 
@@ -109,6 +121,7 @@ function clearMap() {
         for (let j = 0; j < gameWidth; ++j) {
             let id = "#" + getId(i, j);
             $(id).css('background-color', 'green');
+            $(id).css('background-image', 'none');
         }
     }
 }
@@ -116,8 +129,11 @@ function clearMap() {
 function move_snake() {
     if (arrowKey != 0) {
         snakeDir = arrowKey;
-        let newX = Number((snakeX.getNum(0) + dirX[arrowKey] + gameWidth) % gameWidth);
-        let newY = Number((snakeY.getNum(0) + dirY[arrowKey] + gameHeight) % gameHeight);
+        let newX = Number(snakeX.getNum(0) + dirX[arrowKey]);
+        let newY = Number(snakeY.getNum(0) + dirY[arrowKey]);
+        if (newX < 0 || newX >= gameWidth || newY < 0 || newY >= gameHeight) {
+            endGame(0);
+        }
         if (hitBody(newY, newX)) {
             endGame(0);
         }
@@ -134,7 +150,7 @@ function move_snake() {
 
 function showFruit() {
     let id = "#" + getId(fruit.y, fruit.x);
-    $(id).css("background-color", "red");
+    $(id).css("background-image", "url('../../src/snake/book.png')");
 }
 
 function showSnake() {

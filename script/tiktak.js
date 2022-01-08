@@ -16,7 +16,7 @@ function placeMark(x, m) {
 
     if (gameBoard[x - 1] == 0) {
         gameBoard[x - 1] = m;
-        ++step
+        ++step;
         return true;
     }
     return false;
@@ -43,6 +43,7 @@ function delay(n) {
 }
 
 function computerPlay() {
+    ++step;
     while (true) {
         let position = Math.floor(Math.random() * 9)
         if (gameBoard[position] == 0) {
@@ -54,6 +55,7 @@ function computerPlay() {
 }
 
 function checkWin() {
+    console.log(step);
     for (let i = 0; i < 3; ++i) {
         if (gameBoard[0 + 3 * i] == gameBoard[1 + 3 * i] && gameBoard[1 + 3 * i] == gameBoard[2 + 3 * i] && gameBoard[0 + 3 * i] != 0) {
             return gameBoard[0 + 4 * i];
@@ -68,6 +70,7 @@ function checkWin() {
     if (gameBoard[2] == gameBoard[4] && gameBoard[4] == gameBoard[6] && gameBoard[2] != 0) {
         return gameBoard[2];
     }
+    if (step > 8) return -1;
     return 0;
 
 }
@@ -94,8 +97,10 @@ function winUI(x) {
     let text = "";
     if (x == 1) {
         text += "玩家獲勝";
-    } else {
+    } else if (x == 2) {
         text += "電腦獲勝";
+    } else if (x == -1) {
+        text += "平手";
     }
     $('#winText').html(text);
     $('#winUI').css('display', 'block');

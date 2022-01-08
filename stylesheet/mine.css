@@ -1,8 +1,25 @@
 #gameBoard {
     margin: auto;
-    margin-top: 10vh;
     height: 80vh;
     width: 80vh;
+}
+
+#upUI {
+    margin: auto;
+    height: 10vh;
+    width: 80vh;
+    background-color: #BBBBBB;
+    border: 5px solid #333333;
+}
+
+#flags {
+    background-color: black;
+    color: yellow;
+    width: 10%;
+    height: 90%;
+    border: 3px solid #333333;
+    margin: 3px auto;
+    text-align: center;
 }
 
 .chunk {

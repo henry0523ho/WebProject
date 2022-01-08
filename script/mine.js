@@ -3,6 +3,7 @@ var upMap = [];
 var firstClick = true;
 let yDir = [-1, -1, 0, 1, 1, 1, 0, -1];
 let xDir = [0, 1, 1, 1, 0, -1, -1, -1];
+var flags = 6;
 $(document).ready(function() {
     init();
     drawBoard();
@@ -20,14 +21,11 @@ function initMouse() {
                 ev.preventDefault();
                 switch (ev.which) {
                     case 1:
-                        console.log("left");
                         playerClick(i, j, 1);
                         break;
                     case 2:
-                        console.log("middle");
                         break;
                     case 3:
-                        console.log("right");
                         playerClick(i, j, 2);
                         break;
                     default:
@@ -39,6 +37,8 @@ function initMouse() {
 }
 
 function init() {
+    flags = 6;
+    updateFlags();
     upMap = [];
     underMap = [];
     let fullHTML = "";
@@ -57,8 +57,6 @@ function init() {
         upMap.push(emptyArrB);
     }
     $('#gameBoard').html(fullHTML);
-    // console.log(underMap);
-    // console.log(upMap);
     let cnt = 0;
     while (cnt < 6) {
         let y = Math.floor(Math.random() * 8);
@@ -102,7 +100,6 @@ function fillNumber() {
 }
 
 function drawBoard() {
-    // console.log(underMap);
     for (let i = 0; i < 8; ++i) {
         for (let j = 0; j < 8; ++j) {
             let id = "#P";
@@ -135,17 +132,12 @@ function drawBoard() {
 }
 
 function playerClick(y, x, k) {
-    // console.log(y, x);
 
     if (k == 1) {
         if (firstClick == true) {
             while (underMap[y][x] != 0) {
-                console.log("bad map");
-                // console.log(underMap);
-
                 init();
             }
-            console.log("good map")
             firstClick = false;
         }
         if (upMap[y][x] != 2) {
@@ -153,13 +145,15 @@ function playerClick(y, x, k) {
             if (underMap[y][x] == 0) openSpace(y, x);
         }
     } else if (k == 2) {
-        if (upMap[y][x] == 0) {
+        if (upMap[y][x] == 0 && flags) {
             upMap[y][x] = 2;
+            --flags;
         } else if (upMap[y][x] == 2) {
             upMap[y][x] = 0;
+            ++flags;
         }
+        updateFlags();
     }
-    // console.log(upMap);
     drawBoard();
     if (checkWin()) {
         winUI(1);
@@ -169,6 +163,10 @@ function playerClick(y, x, k) {
             winUI(2);
         }
     }
+}
+
+function updateFlags() {
+    $('#flags').html(flags);
 }
 
 function allBoom() {
