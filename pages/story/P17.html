@@ -5,8 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../stylesheet/stylesheet.css">
     <link rel="stylesheet" href="../../stylesheet/story.css">
-    <link rel="preload" href="../../src/story/bedroom.bmp" as="image">
-    <link rel="preload" href="../../src/story/kyon2.png" as="image">
+    <link rel="preload" href="../../src/story/square.bmp" as="image">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,12 +23,12 @@
                 window.location.href = "../menu.html";
             });
             $('.textSection').click(function() {
-                if (state != 6) {
+                if (state != 2) {
                     $(getSection()).css('display', 'none');
                     ++state;
                     $(getSection()).css('display', 'block');
                 } else {
-                    window.location.href = "G4.html";
+                    window.location.href = "../menu.html";
                 }
             });
         });
@@ -38,66 +37,20 @@
 
 <body>
     <section>
-        <div class="backSection" style="background-image: url('../../src/story/bedroom.bmp');background-size: cover;">
+        <div class="backSection" style="background-image: url('../../src/story/square.bmp');background-size: cover;">
 
             <div id="S1" style="display:block">
                 <div class="textSection">
                     <div class="speakerName">阿明</div>
-                    <div class="speakerText">可…可惡，我書都念不完，而且有好多地方都看不懂
-                    </div>
+                    <div class="speakerText">啊~轉眼間就已經年底了，事到如今也發生了許多大小事，儘管遇到了許多挫折，但我還是有堅持下去，但回想剛入學的我人不熟地不熟，而現在則交到許多要好的朋友以及有趣的社團。總比在高中時一直死讀書還要好，畢竟大學死讀書是無法享受大學生活的!難…難不成 這就是所謂的青春嗎(哭)</div>
                 </div>
             </div>
             <div id="S2" style="display:none">
-                <div class="photoSection">
-                    <div class="peopleOne" style="background-image: url('../../src/story/kyon2.png');">
-                    </div>
-                </div>
                 <div class="textSection">
-                    <div class="speakerName">奉太郎</div>
-                    <div class="speakerText">我也是
-                    </div>
-                </div>
-            </div>
-            <div id="S3" style="display:none">
-                <div class="photoSection">
-                    <div class="peopleOne" style="background-image: url('../../src/story/kyon2.png');">
-                    </div>
-                </div>
-                <div class="textSection">
-                    <div class="speakerName">奉太郎</div>
-                    <div class="speakerText">算了，我不想讀了
-                    </div>
-                </div>
-            </div>
-            <div id="S4" style="display:none">
-                <div class="photoSection">
-                    <div class="peopleOne" style="background-image: url('../../src/story/kyon2.png');">
-                    </div>
-                </div>
-                <div class="textSection">
-                    <div class="speakerName">奉太郎</div>
-                    <div class="speakerText">我要去看直播了，你也來看一下嘛~
-                    </div>
-                </div>
-            </div>
-            <div id="S5" style="display:none">
-                <div class="textSection">
-                    <div class="speakerText">(過了一段時間)
-                    </div>
-                </div>
-            </div>
-            <div id="S6" style="display:none">
-                <div class="photoSection">
-                    <div class="peopleOne" style="background-image: url('../../src/story/kyon2.png');">
-                    </div>
-                </div>
-                <div class="textSection">
-                    <div class="speakerName">奉太郎</div>
-                    <div class="speakerText">欸欸 猜拳時間要開始了耶!
-                    </div>
-                </div>
-            </div>
 
+                    <div class="speakerText">劇情結束 end</div>
+                </div>
+            </div>
         </div>
     </section>
     <div class="footerLeft">

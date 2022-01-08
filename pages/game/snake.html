@@ -13,7 +13,17 @@
     <script src="../../script/footer.js"></script>
     <script src="../../script/snake.js"></script>
     <style>
-
+        @keyframes rainbow {
+            0% {
+                background-color: rgb(255, 255, 0);
+            }
+            50% {
+                background-color: rgb(255, 0, 255);
+            }
+            100% {
+                background-color: rgb(0, 255, 255);
+            }
+        }
     </style>
     <script>
         $(document).ready(function() {
@@ -31,12 +41,21 @@
 </head>
 
 <body>
+    <audio id="bgm" src="../../src/snake/titrisBGM.wav" hidden='hidden' preload="auto" loop></audio>
+    <audio id="getPoint" src="../../src/snake/getPoint.wav" hidden='hidden' preload="auto"></audio>
+    <audio id="die" src="../../src/snake/die.wav" hidden='hidden' preload="auto"></audio>
     <div id="UI">
         <h1 id="score">Level:1</h1>
     </div>
     <div id="gameBoard"></div>
     <div id="stopScreen">
         <h1 id="stopText"></h1>
+        <button id="retryButton" type="button " class="btn btn-primary ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+  <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+</svg>
+            </button>
         <button id="finishButton" type="button " class="btn btn-primary ">
                 <svg xmlns="http://www.w3.org/2000/svg " width="50px " height="50px " fill="currentColor "
                     class="bi bi-arrow-left " viewBox="0 0 16 16 ">
@@ -45,6 +64,7 @@
     </div>
     <div id="startScreen">
         <h1>貪食蛇</h1>
+
         <button id="startButton" type="button" class="btn btn-primary ">
             <svg style="float: left" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>
             <h1 style="float: left">開始遊戲</h1>
