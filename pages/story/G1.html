@@ -4,16 +4,19 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../stylesheet/stylesheet.css">
-    <link rel="stylesheet" href="../../stylesheet/snake.css">
+    <link rel="stylesheet" href="../../stylesheet/shoot.css">
+    <link rel="preload" href="../../src/shark.png" as="image">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>貪食蛇</title>
+    <title>射擊</title>
     <script src="../../script/footer.js"></script>
-    <script src="../../script/snake.js"></script>
+    <script src="../../script/shoot.js"></script>
     <style>
-
+        #gameSection {
+            cursor: url('../../src/shoot/aim.png'), auto;
+        }
     </style>
     <script>
         $(document).ready(function() {
@@ -30,29 +33,36 @@
     </script>
 </head>
 
-<body>
-    <div id="UI">
-        <h1 id="score">Level:1</h1>
+<body id="body">
+
+
+    <div id="gameSection" style="background-image: url('../../src/shoot/background.jpg');">
+        <div id="UI" class="UI">
+            <h1 id="UIText">0/20</h1>
+        </div>
+
+        <div id="T3" class="gameObject" style="height:100px;width:260px;top:265px;left:265px;">
+            <img id="TP3" class="targetPhoto" src="../../src/shoot/enemy2.jpg" style="height:50px;width:auto;animation: shift3 3s linear infinite alternate;">
+        </div>
+        <div id="T2" class="gameObject" style="height:150px;width:360px;top:175px;left:220px">
+            <img id="TP2" class="targetPhoto" src="../../src/shoot/enemy2.jpg" style="height:75px;width:auto;animation: shift2 4s linear infinite alternate;">
+        </div>
+        <div id="T1" class="gameObject" style="height:200px;width:500px;top:50px;left:150px">
+            <img id="TP1" class="targetPhoto" src="../../src/shoot/enemy2.jpg" style="height:100px;width:auto;animation: shift1 5s linear infinite alternate;">
+        </div>
+
+
     </div>
-    <div id="gameBoard"></div>
-    <div id="stopScreen">
-        <h1 id="stopText"></h1>
+    <div id="Win">
+        <h1>恭喜</h1>
         <button id="finishButton" type="button " class="btn btn-primary ">
                 <svg xmlns="http://www.w3.org/2000/svg " width="50px " height="50px " fill="currentColor "
                     class="bi bi-arrow-left " viewBox="0 0 16 16 ">
                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
             </button>
     </div>
-    <div id="startScreen">
-        <h1>貪食蛇</h1>
-        <button id="startButton" type="button" class="btn btn-primary ">
-            <svg style="float: left" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>
-            <h1 style="float: left">開始遊戲</h1>
-        </button>
-    </div>
-    <div id="countDown" style="display: none">
-        <h1 id="countDownText"></h1>
-    </div>
+
+
     <div class="footerLeft ">
         <button id="backButton" type="button " class="btn btn-primary ">
                 <svg xmlns="http://www.w3.org/2000/svg " width="50px " height="50px " fill="currentColor "
