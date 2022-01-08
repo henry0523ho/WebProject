@@ -83,7 +83,6 @@ function checkPistonState() {
 
 function playTrumpet() {
     checkGameSound();
-    console.log(checkPoint);
     if (checkPistonState()) {
         $('#trumpetScale').attr('src', "../../src/trumpet/" + ANSSounds[checkPoint] + ".mp3");
         document.getElementById('trumpetScale').play();
@@ -119,7 +118,6 @@ function showHint() {
 }
 
 function winGame() {
-    console.log('called');
     $('#UI').css('display', 'block');
     $('#trumpetScale').attr('src', "../../src/trumpet/win.m4a");
     document.getElementById('trumpetScale').play();
