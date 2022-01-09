@@ -24,10 +24,11 @@
     </style>
     <script>
         function start() {
+            initSound();
             var prev = 1;
             var cur;
             var soundMG = document.getElementById("soundManager");
-            addEventListener('storage', function(e) {
+            window.addEventListener('storage', function(e) {
                 let sound = JSON.parse(localStorage.getItem('sound'));
                 if (sound['env'] == 1) {
                     soundMG.pause();
@@ -42,7 +43,6 @@
                     prev = cur;
                 }
             })
-
         }
         window.addEventListener('load', start, false);
     </script>
