@@ -4,6 +4,11 @@
     width: 80vh;
 }
 
+body {
+    /* background-image: linear-gradient(lightblue, green); */
+    background-color: brown;
+}
+
 #upUI {
     margin: auto;
     height: 10vh;

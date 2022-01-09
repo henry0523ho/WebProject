@@ -58,3 +58,62 @@
     text-align: center;
     padding: 50px;
 }
+
+@keyframes flashGround {
+    from {
+        background-color: green;
+        border-color: lightgreen;
+    }
+    to {
+        background-color: lightgreen;
+        border-color: green
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-color: rgb(255, 255, 0);
+    }
+    50% {
+        background-color: rgb(255, 0, 255);
+    }
+    100% {
+        background-color: rgb(0, 255, 255);
+    }
+}
+
+@keyframes flashBack {
+    from {
+        background-color: white;
+    }
+    to {
+        background-color: black;
+    }
+}
+
+@keyframes flashScore {
+    from {
+        color: black;
+    }
+    to {
+        color: white;
+    }
+}
+
+@keyframes flashBorder {
+    from {
+        border-color: red;
+    }
+    to {
+        border-color: yellow;
+    }
+}
+
+@keyframes flashFruit {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
