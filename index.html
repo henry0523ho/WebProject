@@ -10,9 +10,9 @@
     <link rel="prefetch" href="src/story/classroom.webp" as="image">
     <link rel="prefetch" href="src/story/hallway.webp" as="image">
     <link rel="prefetch" href="src/story/square.webp" as="image">
-    <link rel="prefetch" href="src/watame/bgm.wav" as="audio">
-    <link rel="prefetch" href="src/snake/dejavu.wav" as="audio">
-    <link rel="prefetch" href="src/snake/titrisBGM.wav" as="audio">
+    <link rel="prefetch" href="src/watame/bgm.mp3" as="audio">
+    <link rel="prefetch" href="src/snake/dejavu.mp3" as="audio">
+    <link rel="prefetch" href="src/snake/titrisBGM.mp3" as="audio">
     <link rel="prefetch" href="src/story/outsideMusic.webp" as="image">
     <link rel="prefetch" href="src/story/insideMusic.webp" as="image">
     <link rel="prefetch" href="src/story/outsideMusic1.webp" as="image">
@@ -41,7 +41,6 @@
                 } else {
                     cur = sound['state'];
                     if (cur == 1) {
-                        soundMG.volume = 0.1;
                         soundMG.play();
                     } else {
                         soundMG.pause();
@@ -55,7 +54,7 @@
 </head>
 
 <body>
-    <audio id="soundManager" controls="controls" autoplay="autoplay" controls="controls" hidden="hidden" preload="auto" volume="0.1" loop>
+    <audio id="soundManager" controls="controls" autoplay="autoplay" controls="controls" hidden="hidden" preload="auto" loop>
 		<source src="src/gura.mp3" type="audio/mp3">
 	</audio>
     <iframe src="pages/home.html" style="width:100vw;height: 100vh;border:0 none;margin:0px;overflow: hidden;" scrolling="no">
