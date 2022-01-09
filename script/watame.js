@@ -31,6 +31,8 @@ $(document).ready(function() {
     })
     $('#retryButton').click(function() {
         state = 0;
+        userANS = -1;
+        updateUserANS();
         $('#finishSection').css('display', 'none');
         document.getElementById('watameBgm').pause();
         document.getElementById('watameBgm').currentTime = 0;
@@ -89,7 +91,7 @@ function changeWatame() {
 }
 
 function checkGameSound() {
-    if (getSoundState() == "0") {
+    if (getSoundState() != "1") {
         document.getElementById('watameBgm').muted = true;
     } else {
         document.getElementById('watameBgm').muted = false;

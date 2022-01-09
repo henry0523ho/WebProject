@@ -148,7 +148,7 @@ function drawPistons() {
 }
 
 function checkGameSound() {
-    if (getSoundState() == "0") {
+    if (getSoundState() != "1") {
         document.getElementById('trumpetScale').muted = true;
     } else {
         document.getElementById('trumpetScale').muted = false;

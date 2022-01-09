@@ -302,7 +302,7 @@ function endGame(x) {
 }
 
 function checkGameSound() {
-    if (getSoundState() == "0") {
+    if (getSoundState() != "1") {
         document.getElementById('bgm').muted = true;
         document.getElementById('getPoint').muted = true;
         document.getElementById('die').muted = true;
