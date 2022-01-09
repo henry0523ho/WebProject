@@ -8,7 +8,7 @@ $(document).ready(function() {
         if (haveSound()) {
             if (getSoundState() == '1') {
                 setSoundMute();
-            } else {
+            } else if (getSoundState() == '0' || getSoundState() == '-1') {
                 setSoundPlay();
             }
         } else {

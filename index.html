@@ -31,7 +31,6 @@
     <script>
         function start() {
             initSound();
-            var prev = 1;
             var cur;
             var soundMG = document.getElementById("soundManager");
             window.addEventListener('storage', function(e) {
@@ -45,8 +44,8 @@
                     } else {
                         soundMG.pause();
                     }
-                    prev = cur;
                 }
+                checkSound();
             })
         }
         window.addEventListener('load', start, false);
@@ -54,7 +53,7 @@
 </head>
 
 <body>
-    <audio id="soundManager" controls="controls" autoplay="autoplay" controls="controls" hidden="hidden" preload="auto" loop>
+    <audio id="soundManager" controls="controls" hidden="hidden" preload="auto" loop>
 		<source src="src/gura.mp3" type="audio/mp3">
 	</audio>
     <iframe src="pages/home.html" style="width:100vw;height: 100vh;border:0 none;margin:0px;overflow: hidden;" scrolling="no">
