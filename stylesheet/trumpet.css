@@ -28,7 +28,7 @@
 }
 
 body {
-    background-image: url('../../src/story/insideMusic.jpg');
+    background-image: url('../src/story/insideMusic.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
