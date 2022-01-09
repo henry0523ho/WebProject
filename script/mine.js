@@ -7,6 +7,12 @@ var flags = 6;
 $(document).ready(function() {
     init();
     drawBoard();
+    $('#retryButton').click(function() {
+        $('#winUI').css('display', 'none');
+        flags = 6;
+        init();
+        drawBoard();
+    })
 });
 
 function initMouse() {
@@ -17,7 +23,6 @@ function initMouse() {
             id += i;
             id += j;
             $(id).mousedown(function(ev) {
-                console.log("click event");
                 ev.preventDefault();
                 switch (ev.which) {
                     case 1:

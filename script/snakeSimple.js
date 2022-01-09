@@ -10,6 +10,7 @@ var dirY = [0, -1, 0, 1, 0];
 var snakeDir;
 var gameAble;
 $(document).ready(function() {
+    checkGameSound();
     $(window).keydown(function(e) { checkKey(e) });
     $('#startButton').click(function() {
         document.getElementById('bgm').play();
@@ -26,7 +27,6 @@ $(document).ready(function() {
             $('#countDown').css('display', 'none');
             init();
         }, 3000);
-
     });
     $('#soundButton').click(function() {
         checkGameSound();
@@ -209,6 +209,7 @@ function checkKey(e) {
             if (arrowKey == 0) {
                 arrowKey = lastKey;
                 $('#stopScreen').css('display', 'none');
+                document.getElementById('bgm').play();
                 gameFrame = window.setInterval(everyCycle, frameDuration);
             } else {
                 lastKey = arrowKey;
@@ -247,6 +248,7 @@ function showScore() {
 }
 
 function endGame(x) {
+    document.getElementById('bgm').pause();
     clearInterval(gameFrame);
     $('#stopScreen').css('display', 'block');
     let endText = ""

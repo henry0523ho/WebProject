@@ -29,6 +29,15 @@ $(document).ready(function() {
     $('#soundButton').click(function() {
         checkGameSound();
     })
+    $('#retryButton').click(function() {
+        state = 0;
+        $('#finishSection').css('display', 'none');
+        document.getElementById('watameBgm').pause();
+        document.getElementById('watameBgm').currentTime = 0;
+        $('#picture').css('background-image', 'url(../../src/watame/watame0.png)');
+        $('#herANS').css('background-image', 'url(../../src/watame/unknown.png)');
+        startGame();
+    })
 });
 
 function updateUserANS() {

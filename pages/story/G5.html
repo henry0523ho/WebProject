@@ -13,16 +13,8 @@
     <script src="../../script/footer.js"></script>
     <script src="../../script/snakeSimple.js"></script>
     <style>
-        @keyframes rainbow {
-            0% {
-                background-color: rgb(255, 255, 0);
-            }
-            50% {
-                background-color: rgb(255, 0, 255);
-            }
-            100% {
-                background-color: rgb(0, 255, 255);
-            }
+        body {
+            background-color: pink;
         }
     </style>
     <script>
@@ -51,13 +43,14 @@
     <div id="stopScreen">
         <h1 id="stopText"></h1>
         <button id="finishButton" type="button " class="btn btn-primary ">
+            <h1 style="float: left;">下一頁</h1>
                 <svg xmlns="http://www.w3.org/2000/svg " width="50px " height="50px " fill="currentColor "
                     class="bi bi-arrow-left " viewBox="0 0 16 16 ">
                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
             </button>
     </div>
     <div id="startScreen">
-        <h1>貪食蛇</h1>
+        <h1>這次有女助教幫忙 應該比較簡單</h1>
         <button id="startButton" type="button" class="btn btn-primary ">
             <svg style="float: left" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>
             <h1 style="float: left">開始遊戲</h1>

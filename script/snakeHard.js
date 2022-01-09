@@ -10,6 +10,7 @@ var dirY = [0, -1, 0, 1, 0];
 var snakeDir;
 var gameAble;
 $(document).ready(function() {
+    checkGameSound();
     $(window).keydown(function(e) { checkKey(e) });
     $('#startButton').click(function() {
         document.getElementById('bgm').play();
@@ -71,6 +72,7 @@ function getId(y, x) {
 }
 
 function init() {
+    flashAll();
     init_snake();
     init_fruit();
     initMap();
@@ -114,7 +116,7 @@ function initMap() {
     for (let i = 0; i < gameHeight; ++i) {
         for (let j = 0; j < gameWidth; ++j) {
             let id = getId(i, j);
-            html += '<div class="gameCell" id="' + id + '"></div>';
+            html += '<div class="gameCell" id="' + id + '" style="animation:flashGround 1s infinite alternate"></div>';
         }
     }
     $('#gameBoard').html(html);
@@ -126,7 +128,8 @@ function clearMap() {
             let id = "#" + getId(i, j);
             $(id).css('background-color', 'green');
             $(id).css('background-image', 'none');
-            $(id).css('animation', 'none');
+            $(id).css("animation", "none");
+            $(id).css('animation', 'flashGround 1s infinite alternate');
         }
     }
 }
@@ -155,6 +158,7 @@ function move_snake() {
 
 function showFruit() {
     let id = "#" + getId(fruit.y, fruit.x);
+    $(id).css('animation', 'flashFruit 1s infinite alternate,flashGround 1s infinite alternate');
     $(id).css("background-image", "url('../../src/snake/book.png')");
 }
 
@@ -162,8 +166,10 @@ function showSnake() {
     for (let i = 0; i < snakeX.getLen(); ++i) {
         let id = "#" + getId(snakeY.getNum(i), snakeX.getNum(i));
         if (i == 0) {
+            $(id).css("animation", "none");
             $(id).css("background-color", "navy");
         } else {
+            $(id).css("animation", "none");
             $(id).css("animation", "rainbow 0.5s infinite alternate");
         }
     }
@@ -209,11 +215,13 @@ function checkKey(e) {
             if (arrowKey == 0) {
                 arrowKey = lastKey;
                 $('#stopScreen').css('display', 'none');
+                document.getElementById('bgm').play();
                 gameFrame = window.setInterval(everyCycle, frameDuration);
             } else {
                 lastKey = arrowKey;
                 arrowKey = 0;
                 endGame(2);
+
             }
             break;
         default:
@@ -222,13 +230,41 @@ function checkKey(e) {
 }
 
 
+let cnt = 0;
 
 function everyCycle() {
     if (score >= 10) endGame(1);
     move_snake();
     clearMap();
+    if (cnt % 1 == 0) {
+        moveFruit();
+    }
     showFruit();
     showSnake();
+    ++cnt;
+}
+
+function moveFruit() {
+    let x, y;
+    let check = false;
+    let MFDir = Math.floor(Math.random() * 4);
+    for (let i = 0; i < 4; ++i) {
+        let mFDir = (i + MFDir) % 4 + 1;
+        x = fruit.x + dirX[mFDir];
+        y = fruit.y + dirY[mFDir];
+        if (x < gameWidth && x >= 0 && y < gameHeight && y >= 0) {
+            for (let i = 0; i < snakeX.getLen(); ++i) {
+                if (x == snakeX.getNum(i) && y == snakeY.getNum(i)) {
+                    check = true;
+                    break;
+                }
+            }
+        } else { check = true; continue; }
+
+
+        if (check == false) { break; }
+    }
+    if (check == false) fruit = { y: y, x: x };
 }
 
 function hitBody(y, x) {
@@ -247,17 +283,19 @@ function showScore() {
 }
 
 function endGame(x) {
+    document.getElementById('bgm').pause();
     clearInterval(gameFrame);
     $('#stopScreen').css('display', 'block');
     let endText = ""
     if (x == 0) {
         document.getElementById('die').play();
-        endText = "Game Over!";
+        endText = "窩不會~";
     } else if (x == 1) {
         document.getElementById('getPoint').play();
-        endText = "恭喜通關!";
+        endText = "怎麼可能 一定只是運起好而已";
     } else if (x == 2) {
         endText = "暫停";
+
     }
     $('#stopText').html(endText);
 
@@ -273,4 +311,10 @@ function checkGameSound() {
         document.getElementById('getPoint').muted = false;
         document.getElementById('die').muted = false;
     }
+}
+
+function flashAll() {
+    $('body').css('animation', 'flashBack 1s infinite alternate');
+    $('#score').css('animation', 'flashScore 1s infinite alternate');
+    $('#gameBoard').css('animation', 'flashBorder 1s infinite alternate');
 }
