@@ -159,7 +159,7 @@ function move_snake() {
 function showFruit() {
     let id = "#" + getId(fruit.y, fruit.x);
     $(id).css('animation', 'flashFruit 1s infinite alternate,flashGround 1s infinite alternate');
-    $(id).css("background-image", "url('../../src/snake/book.png')");
+    $(id).css("background-image", "url('../../src/snake/book.webp')");
 }
 
 function showSnake() {

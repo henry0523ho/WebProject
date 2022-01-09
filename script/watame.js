@@ -36,8 +36,8 @@ $(document).ready(function() {
         $('#finishSection').css('display', 'none');
         document.getElementById('watameBgm').pause();
         document.getElementById('watameBgm').currentTime = 0;
-        $('#picture').css('background-image', 'url(../../src/watame/watame0.png)');
-        $('#herANS').css('background-image', 'url(../../src/watame/unknown.png)');
+        $('#picture').css('background-image', 'url(../../src/watame/watame0.webp)');
+        $('#herANS').css('background-image', 'url(../../src/watame/unknown.webp)');
         startGame();
     })
 });
@@ -66,7 +66,7 @@ function everyCycle() {
     if (7 < state && state <= 26) {
         changeWatame();
     } else if (state > 26) {
-        $('#herANS').css('background-image', 'url(../../src/watame/' + ANSImg[ANS] + '.png)');
+        $('#herANS').css('background-image', 'url(../../src/watame/' + ANSImg[ANS] + '.webp)');
     }
     if (state == 29) {
         clearInterval(oneSecond);
@@ -78,7 +78,7 @@ function everyCycle() {
 
 function changeWatame() {
     let newUrl = "../../src/watame/watame";
-    $('#picture').css('background-image', 'url(' + newUrl + (state % 4) + '.png)');
+    $('#picture').css('background-image', 'url(' + newUrl + (state % 4) + '.webp)');
     if (state % 2) {
         $('#herANS').css('border', '5px solid white');
         $('#herANS').css('animation-name', 'rotate');

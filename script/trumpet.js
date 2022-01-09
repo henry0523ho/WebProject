@@ -70,7 +70,6 @@ $(document).ready(function() {
         drawPistons();
     });
     $('#mouthPiece').click(function() {
-        console.log('sound');
         playTrumpet();
     });
 });
@@ -94,7 +93,7 @@ function playTrumpet() {
         let note = "#note";
         note += ANSSounds[checkPoint];
         $(note).attr('stroke', 'red').attr('fill', 'red');
-        $('#trumpetScale').attr('src', "../../src/trumpet/trumpetFail.wav");
+        $('#trumpetScale').attr('src', "../../src/trumpet/trumpetFail.mp3");
         document.getElementById('trumpetScale').play();
         $(note).attr('stroke', 'red').attr('fill', 'red');
     }
@@ -129,19 +128,19 @@ function drawPistons() {
     THeight = $('#instrumentBody').height();
     TK = TWidth / 1200;
     if (pistonState[0] == 1) {
-        $('#piston1').attr('src', '../../src/trumpet/PistonIn.png').css('width', 34 * TK).css('left', 453 * TK).css('top', -385 * TK);
+        $('#piston1').attr('src', '../../src/trumpet/PistonIn.webp').css('width', 34 * TK).css('left', 453 * TK).css('top', -385 * TK);
     } else {
-        $('#piston1').attr('src', '../../src/trumpet/Piston.png').css('width', 34 * TK).css('left', 453 * TK).css('top', -413 * TK);
+        $('#piston1').attr('src', '../../src/trumpet/Piston.webp').css('width', 34 * TK).css('left', 453 * TK).css('top', -413 * TK);
     }
     if (pistonState[1] == 1) {
-        $('#piston2').attr('src', '../../src/trumpet/PistonIn.png').css('width', 34 * TK).css('left', 468 * TK).css('top', -385 * TK);
+        $('#piston2').attr('src', '../../src/trumpet/PistonIn.webp').css('width', 34 * TK).css('left', 468 * TK).css('top', -385 * TK);
     } else {
-        $('#piston2').attr('src', '../../src/trumpet/Piston.png').css('width', 34 * TK).css('left', 468 * TK).css('top', -413 * TK);
+        $('#piston2').attr('src', '../../src/trumpet/Piston.webp').css('width', 34 * TK).css('left', 468 * TK).css('top', -413 * TK);
     }
     if (pistonState[2] == 1) {
-        $('#piston3').attr('src', '../../src/trumpet/PistonIn.png').css('width', 34 * TK).css('left', 481 * TK).css('top', -385 * TK);
+        $('#piston3').attr('src', '../../src/trumpet/PistonIn.webp').css('width', 34 * TK).css('left', 481 * TK).css('top', -385 * TK);
     } else {
-        $('#piston3').attr('src', '../../src/trumpet/Piston.png').css('width', 34 * TK).css('left', 481 * TK).css('top', -413 * TK);
+        $('#piston3').attr('src', '../../src/trumpet/Piston.webp').css('width', 34 * TK).css('left', 481 * TK).css('top', -413 * TK);
     }
     $('#mouthPiece').css('width', 130 * TK).css('height', 60 * TK).css('left', -70 * TK).css('top', -355 * TK);
 
