@@ -55,7 +55,6 @@ function computerPlay() {
 }
 
 function checkWin() {
-    console.log(step);
     for (let i = 0; i < 3; ++i) {
         if (gameBoard[0 + 3 * i] == gameBoard[1 + 3 * i] && gameBoard[1 + 3 * i] == gameBoard[2 + 3 * i] && gameBoard[0 + 3 * i] != 0) {
             return gameBoard[0 + 4 * i];
@@ -64,7 +63,7 @@ function checkWin() {
             return gameBoard[i];
         }
     }
-    if (gameBoard[0] == gameBoard[4] && gameBoard[4] == gameBoard[9] && gameBoard[0] != 0) {
+    if (gameBoard[0] == gameBoard[4] && gameBoard[4] == gameBoard[8] && gameBoard[0] != 0) {
         return gameBoard[0];
     }
     if (gameBoard[2] == gameBoard[4] && gameBoard[4] == gameBoard[6] && gameBoard[2] != 0) {
