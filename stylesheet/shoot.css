@@ -58,7 +58,7 @@ body {
         transform: rotateX(0deg);
     }
     to {
-        transform: rotateX(80deg);
+        transform: rotateX(85deg);
     }
 }
 
@@ -91,7 +91,7 @@ body {
 
 @keyframes recover {
     from {
-        transform: rotateX(80deg);
+        transform: rotateX(85deg);
     }
     to {
         transform: rotateX(0deg);
