@@ -97,3 +97,14 @@ body {
         transform: rotateX(0deg);
     }
 }
+
+#titleSection {
+    position: fixed;
+    width: 100vw;
+    height: 20vh;
+    top: 40vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 30px;
+    font-size: 20px;
+}

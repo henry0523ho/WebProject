@@ -29,26 +29,28 @@
 
     </style>
     <script>
-        function start() {
+        $(document).ready(function() {
             initSound();
-            var cur;
-            var soundMG = document.getElementById("soundManager");
+            initChat();
             window.addEventListener('storage', function(e) {
                 let sound = JSON.parse(localStorage.getItem('sound'));
                 if (sound['env'] == 1) {
-                    soundMG.pause();
+                    document.getElementById("soundManager").pause();
                 } else {
-                    cur = sound['state'];
-                    if (cur == 1) {
-                        soundMG.play();
+                    if (sound['state'] == 1) {
+                        document.getElementById("soundManager").play();
                     } else {
-                        soundMG.pause();
+                        document.getElementById("soundManager").pause();
                     }
                 }
                 checkSound();
+                if (getChatState() == 1) {
+                    $('#chatSection').css('display', 'block');
+                } else if (getChatState() == 0) {
+                    $('#chatSection').css('display', 'none');
+                }
             })
-        }
-        window.addEventListener('load', start, false);
+        });
     </script>
 </head>
 
@@ -56,7 +58,8 @@
     <audio id="soundManager" controls="controls" hidden="hidden" preload="auto" loop>
 		<source src="src/gura.mp3" type="audio/mp3">
 	</audio>
-    <iframe src="pages/home.html" style="width:100vw;height: 100vh;border:0 none;margin:0px;overflow: hidden;" scrolling="no">
+    <iframe src="pages/home.html" style="width:100vw;height: 100vh;border:0 none;margin:0px;overflow: hidden;" scrolling="no"></iframe>
+    <iframe id="chatSection" src="pages/chat.html" style="width:50%;display:none;position: fixed;border:0 none;bottom:10vh;left:0vw;margin:0px;overflow: hidden;" scrolling="no"></iframe>
 </body>
 
 </html>
