@@ -20,7 +20,71 @@ $(document).ready(function() {
         }
         checkSound();
     });
+    $(window).keydown(function(e) {
+        var event = window.event ? window.event : e;
+
+        console.log(event.keyCode);
+        if (event.keyCode == 84) {
+            if (haveChat()) {
+                if (getChatState() == '0') {
+                    setChatShow();
+                }
+            } else {
+                initChat();
+            }
+        } else if (event.keyCode == 27) {
+            if (haveChat()) {
+                if (getChatState() == '1') {
+                    setChatHide();
+                }
+            } else {
+                initChat();
+            }
+        }
+    });
 });
+
+function haveChat() {
+    return localStorage.getItem('chat') != null;
+}
+
+function initChat() {
+    var chatInfo = {
+        'name': '',
+        'showState': '0'
+    }
+    localStorage.setItem('chat', JSON.stringify(chatInfo));
+}
+
+function setChatShow() {
+    let chat = JSON.parse(localStorage.getItem('chat'));
+    chat['showState'] = '1';
+    localStorage.setItem('chat', JSON.stringify(chat));
+}
+
+function setChatHide() {
+    let chat = JSON.parse(localStorage.getItem('chat'));
+    chat['showState'] = '0';
+    localStorage.setItem('chat', JSON.stringify(chat));
+}
+
+function getChatState() {
+    return JSON.parse(localStorage.getItem('chat'))['showState'];
+}
+
+function getChatName() {
+    return JSON.parse(localStorage.getItem('chat'))['name'];
+}
+
+
+function setChatName(UserName) {
+    let UN = UserName.trim();
+    if (UN == '') return false;
+    let chat = JSON.parse(localStorage.getItem('chat'));
+    chat['name'] = UN;
+    localStorage.setItem('chat', JSON.stringify(chat));
+    return true;
+}
 
 function initSound() {
     var soundInfo = {

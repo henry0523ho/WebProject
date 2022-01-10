@@ -30,12 +30,17 @@
                 } else {
                     window.location.href = "P2.html";
                 }
+                if (state == 3) {
+                    checkStorySound();
+                    document.getElementById('soundEffect').play();
+                }
             });
         });
     </script>
 </head>
 
 <body>
+    <audio id="soundEffect" src="../../src/story/walk.mp3" preload="auto" hidden='hidden'></audio>
     <section>
         <div class="backSection" style="background-image: url('../../src/story/square.webp');background-size: cover;">
             <div id="S1" style="display:block">

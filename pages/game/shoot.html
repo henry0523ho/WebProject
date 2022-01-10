@@ -23,7 +23,7 @@
             setSoundGame();
             $('#backButton').click(function() {
                 setSoundNormal();
-                window.location.href = "../menu.html";
+                window.location.href = "../games.html";
             });
             $('#finishButton').click(function() {
                 setSoundNormal();
@@ -35,7 +35,8 @@
 
 <body id="body">
 
-
+    <audio id="bgm" src="../../src/shoot/shootBGM.mp3" preload="auto" hidden='hidden'></audio>
+    <audio id="hit" src="../../src/shoot/hit.mp3" preload="auto" hidden='hidden'></audio>
     <div id="gameSection" style="background-image: url('../../src/shoot/background.webp');">
         <div id="UI" class="UI">
             <h1 id="UIText">0/20</h1>
@@ -61,7 +62,12 @@
                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
             </button>
     </div>
-
+    <div id="titleSection">
+        <button id="startButton" type="button" class="btn btn-primary ">
+            <svg style="float: left" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>
+            <h1 style="float: left">開始遊戲</h1>
+        </button>
+    </div>
 
     <div class="footerLeft ">
         <button id="backButton" type="button " class="btn btn-primary ">
