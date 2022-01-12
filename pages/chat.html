@@ -126,7 +126,7 @@
             firebase.database().ref('chat').push({
                 name: getChatName(),
                 time: Date.now(),
-                text: $('#inputSection').val()
+                text: inputTMP,
             }).catch(function(error) {
                 console.error(error);
             });
