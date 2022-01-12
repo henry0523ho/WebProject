@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    html {
+        background-color: transparent !important;
+    }
+</style>
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -30,6 +35,7 @@
     </style>
     <script>
         $(document).ready(function() {
+
             initSound();
             initChat();
             window.addEventListener('storage', function(e) {
@@ -59,7 +65,7 @@
 		<source src="src/gura.mp3" type="audio/mp3">
 	</audio>
     <iframe src="pages/home.html" style="width:100vw;height: 100vh;border:0 none;margin:0px;overflow: hidden;" scrolling="no"></iframe>
-    <iframe id="chatSection" src="pages/chat.html" style="width:50%;display:none;position: fixed;border:0 none;bottom:10vh;left:0vw;margin:0px;overflow: hidden;" scrolling="no"></iframe>
+    <iframe id="chatSection" src="pages/chat.html" style="width:calc(100vw/2);height: calc(100vh/2);display:none;position: fixed;border:0 none;bottom:10vh;left:0vw;margin:0px;overflow: hidden;" scrolling="no" allowtransparency="true"></iframe>
 </body>
 
 </html>
