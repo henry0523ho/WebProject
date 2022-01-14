@@ -70,6 +70,7 @@ section {
     padding-right: 10px;
     margin: auto;
     font-size: 30px;
+    /* font-weight: bold; */
 }
 
 .speakerText {
@@ -79,6 +80,7 @@ section {
     padding: 40px;
     width: 65%;
     height: 15px;
+    font-weight: bold;
 }
 
 .titleSection {
@@ -93,4 +95,6 @@ section {
     color: black;
     font-size: 50px;
     text-align: center;
+    font-style: italic;
+    /* font-weight: bold; */
 }
