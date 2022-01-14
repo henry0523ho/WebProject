@@ -23,7 +23,7 @@ $(document).ready(function() {
     $(window).keydown(function(e) {
         var event = window.event ? window.event : e;
 
-        console.log(event.keyCode);
+        // console.log(event.keyCode);
         if (event.keyCode == 84) {
             if (haveChat()) {
                 if (getChatState() == '0') {

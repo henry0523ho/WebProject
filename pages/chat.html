@@ -135,7 +135,7 @@
 
         function getData() {
             firebase.database().ref('chat').orderByChild('time').limitToLast(showLength).on('child_added', function(snap) {
-                console.log(snap)
+                // console.log(snap)
                 let obj = {
                     name: snap.val().name,
                     time: snap.val().time,
