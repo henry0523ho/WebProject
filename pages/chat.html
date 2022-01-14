@@ -141,9 +141,11 @@
                     time: snap.val().time,
                     text: snap.val().text,
                 }
-                localData.shift()
-                localData.push(obj);
-                showData();
+                if (obj.time != localData[localData.length - 1].time) {
+                    localData.shift()
+                    localData.push(obj);
+                    showData();
+                }
             });
 
         }
