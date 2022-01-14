@@ -25,12 +25,20 @@
                 window.location.href = "../menu.html";
             });
             $('.textSection').click(function() {
-                if (state != 9) {
+                if (state != 10) {
                     $(getSection()).css('display', 'none');
                     ++state;
                     $(getSection()).css('display', 'block');
                 } else {
                     window.location.href = "P3.html";
+                }
+                if (state == 4) {
+                    checkStorySound();
+                    document.getElementById('soundEffect').play();
+                }
+                if (state == 7) {
+                    checkStorySound();
+                    document.getElementById('soundEffect1').play();
                 }
             });
         });
@@ -38,6 +46,8 @@
 </head>
 
 <body>
+    <audio id="soundEffect" src="../../src/story/walkAndBoard.mp3" preload="auto" hidden='hidden'></audio>
+    <audio id="soundEffect1" src="../../src/story/peopleGoAway.mp3" preload="auto" hidden='hidden'></audio>
     <section>
         <div class="backSection" style="background-image: url('../../src/story/classroom.webp');">
             <div id="S1" style="display:block">
@@ -53,14 +63,14 @@
                     </div>
                 </div>
                 <div class="textSection">
-                    <div class="speakerName">老師</div>
+                    <div class="speakerName">教授</div>
                     <div class="speakerText">接下來就請每個人做自我介紹吧!</div>
                 </div>
             </div>
             <div id="S3" style="display:none">
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">大家好~我是阿明<br>我的目標是順順利利的讀完大學，並希望能交到許多朋友</div>
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">大家好~我是佐藤司<br>我的目標是順順利利的讀完大學，並和大家快快樂樂的相處!</div>
                 </div>
             </div>
             <div id="S4" style="display:none">
@@ -75,39 +85,49 @@
                 </div>
                 <div class="textSection">
                     <div class="speakerName">奉太郎</div>
-                    <div class="speakerText">我叫折木奉太郎，叫我奉太郎就可以了，我目前沒什麼目標，只想 當安分守己的好學生，就這樣。</div>
+                    <div class="speakerText">我叫折木奉太郎，叫我奉太郎就可以了，我目前沒什麼目標。</div>
                 </div>
             </div>
             <div id="S6" style="display:none">
+                <div class="photoSection">
+                    <div class="peopleOne" style="background-image: url('../../src/story/kyon2.webp');">
+                    </div>
+                </div>
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">(人群解散聲)</div>
+                    <div class="speakerName">奉太郎</div>
+                    <div class="speakerText">只想當個安分守己的好學生，安穩的過完大學生活，就這樣。</div>
                 </div>
             </div>
             <div id="S7" style="display:none">
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">…這個人雖然感覺十分內向，但看起來蠻好相處的</div>
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">(人群解散聲)</div>
                 </div>
             </div>
             <div id="S8" style="display:none">
                 <div class="textSection">
-                    <div class="speakerText">於是新生聚會完美落幕</div>
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">…這個人雖然感覺十分內向，但看起來蠻好相處的</div>
                 </div>
             </div>
             <div id="S9" style="display:none">
                 <div class="textSection">
-                    <div class="speakerText">而不久之後阿明跟皮得分發到同一個房間</div>
+                    <div class="speakerText">過了幾天之後，佐藤司跟奉太郎分發到同一個房間。</div>
+                </div>
+            </div>
+            <div id="S10" style="display:none">
+                <div class="textSection">
+                    <div class="speakerText">懷著對今後的各種期待，佐藤司的大學生活拉開了序幕。</div>
                 </div>
             </div>
         </div>
     </section>
     <div class="footerLeft">
         <button id="backButton" type="button" class="btn btn-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                </svg>
-            </button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+            </svg>
+        </button>
     </div>
     <div class="footerRight">
         <button id="soundButton" type="button" class="btn btn-primary">

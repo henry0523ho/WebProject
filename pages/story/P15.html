@@ -5,9 +5,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../stylesheet/stylesheet.css">
     <link rel="stylesheet" href="../../stylesheet/story.css">
-    <link rel="preload" href="../../src/story/outsideMusic.webp" as="image">
-    <link rel="prefetch" href="../../src/story/yo.webp" as="image">
-    <link rel="prefetch" href="../../src/story/mizore.webp" as="image">
+    <link rel="preload" href="../../src/story/classroom.webp" as="image">
+    <link rel="prefetch" href="../../src/story/teacherBlack.webp" as="image">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,12 +24,16 @@
                 window.location.href = "../menu.html";
             });
             $('.textSection').click(function() {
-                if (state != 9) {
+                if (state != 5) {
                     $(getSection()).css('display', 'none');
                     ++state;
                     $(getSection()).css('display', 'block');
                 } else {
-                    window.location.href = "P16.html";
+                    window.location.href = "G6.html";
+                }
+                if (state == 3) {
+                    checkStorySound();
+                    document.getElementById('soundEffect').play();
                 }
             });
         });
@@ -38,82 +41,48 @@
 </head>
 
 <body>
+    <audio id="soundEffect" src="../../src/story/bell.mp3" preload="auto" hidden='hidden'></audio>
     <section>
-        <div class="backSection" style="background-image: url('../../src/story/outsideMusic.webp');background-size: cover;">
+        <div class="backSection" style="background-image: url('../../src/story/classroom.webp');background-size: cover;">
+
             <div id="S1" style="display:block">
+                <div class="titleSection">
+                    <div class="titleText">教室</div>
+                </div>
                 <div class="textSection">
-                    <div class="speakerText">(吹奏比賽當天)
-                    </div>
                 </div>
             </div>
             <div id="S2" style="display:none">
-                <div class="titleSection">
-                    <div class="titleText">音樂廳外面</div>
-                </div>
                 <div class="textSection">
+                    <div class="speakerText">到了考試當天。
+                    </div>
                 </div>
             </div>
             <div id="S3" style="display:none">
-
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">哇!
+                    <div class="speakerText">(鐘聲)
                     </div>
                 </div>
             </div>
             <div id="S4" style="display:none">
-
+                <div class="photoSection">
+                    <div class="peopleOne" style="background-image: url('../../src/story/teacherBlack.webp');">
+                    </div>
+                </div>
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">有好多學校喔!而且每間學校都好有氣派喔!
+                    <div class="speakerName">教授</div>
+                    <div class="speakerText">各位同學，要準備發考卷了
                     </div>
                 </div>
             </div>
             <div id="S5" style="display:none">
                 <div class="photoSection">
-                    <div class="peopleOne" style="background-image: url('../../src/story/kumiko.webp');">
+                    <div class="peopleOne" style="background-image: url('../../src/story/teacherBlack.webp');">
                     </div>
                 </div>
                 <div class="textSection">
-                    <div class="speakerName">久美子</div>
-                    <div class="speakerText">嘛~畢竟參加的都是音樂強校
-                    </div>
-                </div>
-            </div>
-            <div id="S6" style="display:none">
-
-                <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">我們會不會被他們的光芒掩蓋掉阿?
-                    </div>
-                </div>
-            </div>
-            <div id="S7" style="display:none">
-                <div class="photoSection">
-                    <div class="peopleOne" style="background-image: url('../../src/story/kumiko.webp');">
-                    </div>
-                </div>
-                <div class="textSection">
-                    <div class="speakerName">久美子</div>
-                    <div class="speakerText">要對自己有信心
-                    </div>
-                </div>
-            </div>
-            <div id="S8" style="display:none">
-                <div class="photoSection">
-                    <div class="peopleOne" style="background-image: url('../../src/story/kumiko.webp');">
-                    </div>
-                </div>
-                <div class="textSection">
-                    <div class="speakerName">久美子</div>
-                    <div class="speakerText">而且我們花了那麼多的時間練習，絕對不會有問題的!
-                    </div>
-                </div>
-            </div>
-            <div id="S9" style="display:none">
-                <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">恩 我們一定要拿下全國第一!!!
+                    <div class="speakerName">教授</div>
+                    <div class="speakerText">拿到考卷之後就開始作答
                     </div>
                 </div>
             </div>

@@ -23,14 +23,14 @@
                 window.location.href = "../menu.html";
             });
             $('.textSection').click(function() {
-                if (state != 5) {
+                if (state != 10) {
                     $(getSection()).css('display', 'none');
                     ++state;
                     $(getSection()).css('display', 'block');
                 } else {
                     window.location.href = "P2.html";
                 }
-                if (state == 3) {
+                if (state == 5) {
                     checkStorySound();
                     document.getElementById('soundEffect').play();
                 }
@@ -57,19 +57,47 @@
             </div>
             <div id="S3" style="display:none">
                 <div class="textSection">
-                    <div class="speakerText">(腳步聲)</div>
+                    <div class="speakerText">大學，同時也是為人生增添色彩的染料</div>
                 </div>
             </div>
             <div id="S4" style="display:none">
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">終於升上大學了~不知道在這裡是否能交到要好的朋友</div>
+                    <div class="speakerText">而身為主角的佐藤司，究竟會有怎麼樣的展開呢?</div>
                 </div>
             </div>
             <div id="S5" style="display:none">
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">啊! 等會有新生聚會，去看一下好了</div>
+                    <div class="speakerText">(腳步聲)</div>
+                </div>
+            </div>
+            <div id="S6" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">我終於升上大學了!!!</div>
+                </div>
+            </div>
+            <div id="S7" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">想必在這也會遇到各式各樣的人吧!</div>
+                </div>
+            </div>
+            <div id="S8" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">真期待能在這邊交到許多要好的朋友~</div>
+                </div>
+            </div>
+            <div id="S9" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">啊!!! 我差點忘記有新生聚會了。</div>
+                </div>
+            </div>
+            <div id="S10" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">我得趕緊過去!</div>
                 </div>
             </div>
         </div>

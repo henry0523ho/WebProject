@@ -292,7 +292,7 @@ function endGame(x) {
         endText = "窩不會~";
     } else if (x == 1) {
         document.getElementById('getPoint').play();
-        endText = "怎麼可能 一定只是運起好而已";
+        endText = "怎麼可能 一定只是運氣好而已";
     } else if (x == 2) {
         endText = "暫停";
 

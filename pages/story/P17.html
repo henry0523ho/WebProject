@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../stylesheet/stylesheet.css">
     <link rel="stylesheet" href="../../stylesheet/story.css">
-    <link rel="preload" href="../../src/story/insideMusic.webp" as="image">
+    <link rel="preload" href="../../src/story/outsideMusic.webp" as="image">
     <link rel="prefetch" href="../../src/story/yo.webp" as="image">
     <link rel="prefetch" href="../../src/story/mizore.webp" as="image">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -25,12 +25,16 @@
                 window.location.href = "../menu.html";
             });
             $('.textSection').click(function() {
-                if (state != 6) {
+                if (state != 10) {
                     $(getSection()).css('display', 'none');
                     ++state;
                     $(getSection()).css('display', 'block');
                 } else {
                     window.location.href = "P18.html";
+                }
+                if (state == 3) {
+                    checkStorySound();
+                    document.getElementById('soundEffect').play();
                 }
             });
         });
@@ -38,60 +42,95 @@
 </head>
 
 <body>
+    <audio id="soundEffect" src="../../src/story/people.mp3" preload="auto" hidden='hidden'></audio>
     <section>
-        <div class="backSection" style="background-image: url('../../src/story/insideMusic.webp');background-size: cover;">
+        <div class="backSection" style="background-image: url('../../src/story/outsideMusic.webp');background-size: cover;">
             <div id="S1" style="display:block">
+                <div class="titleSection">
+                    <div class="titleText">吹奏比賽當天</div>
+                </div>
                 <div class="textSection">
-                    <div class="speakerText">(吹奏比賽結束)
-                    </div>
                 </div>
             </div>
             <div id="S2" style="display:none">
+                <div class="titleSection">
+                    <div class="titleText">音樂廳外面</div>
+                </div>
                 <div class="textSection">
-                    <div class="speakerName">廣播</div>
-                    <div class="speakerText">…接下來公布前三名
-                    </div>
                 </div>
             </div>
             <div id="S3" style="display:none">
+
                 <div class="textSection">
-                    <div class="speakerName">廣播</div>
-                    <div class="speakerText">第三名 XX大學，第二名 OO大學
+                    <div class="speakerText">(人群聲)
                     </div>
                 </div>
             </div>
             <div id="S4" style="display:none">
+
                 <div class="textSection">
-                    <div class="speakerName">廣播</div>
-                    <div class="speakerText">最後我們的第一名是…勝利大學
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">哇!
                     </div>
                 </div>
             </div>
             <div id="S5" style="display:none">
-                <div class="photoSection">
-                    <div class="peopleTwo" style="background-image: url('../../src/story/mizore.webp');background-position: right;">
-                    </div>
-                    <div class="peopleTwo" style="background-image: url('../../src/story/kumiko2.webp');left: 50vw;background-position: left;">
-                    </div>
-                </div>
+
                 <div class="textSection">
-                    <div class="speakerName">其他社員</div>
-                    <div class="speakerText">
-                        太好了!!!
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">有好多學校喔!而且每間學校都好有氣派喔!
                     </div>
                 </div>
             </div>
             <div id="S6" style="display:none">
                 <div class="photoSection">
-                    <div class="peopleOne" style="background-image: url('../../src/story/yo.webp');">
+                    <div class="peopleOne" style="background-image: url('../../src/story/kumiko.webp');">
                     </div>
                 </div>
                 <div class="textSection">
-                    <div class="speakerName">優子</div>
-                    <div class="speakerText">多虧大家的努力，我們才能得到第一名!!!
+                    <div class="speakerName">久美子</div>
+                    <div class="speakerText">嘛~畢竟參加的都是音樂強校
                     </div>
                 </div>
             </div>
+            <div id="S7" style="display:none">
+
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">我們會不會被他們的光芒掩蓋掉阿?
+                    </div>
+                </div>
+            </div>
+            <div id="S8" style="display:none">
+                <div class="photoSection">
+                    <div class="peopleOne" style="background-image: url('../../src/story/kumiko.webp');">
+                    </div>
+                </div>
+                <div class="textSection">
+                    <div class="speakerName">久美子</div>
+                    <div class="speakerText">要對自己有信心
+                    </div>
+                </div>
+            </div>
+            <div id="S9" style="display:none">
+                <div class="photoSection">
+                    <div class="peopleOne" style="background-image: url('../../src/story/kumiko.webp');">
+                    </div>
+                </div>
+                <div class="textSection">
+                    <div class="speakerName">久美子</div>
+                    <div class="speakerText">而且我們花了那麼多的時間練習，絕對不會有問題的!
+                    </div>
+                </div>
+            </div>
+            <div id="S10" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">恩 我們一定要拿下全國第一!!!
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
     <div class="footerLeft">

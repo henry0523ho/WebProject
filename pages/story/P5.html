@@ -32,12 +32,20 @@
                 window.location.href = "../menu.html";
             });
             $('.textSection').click(function() {
-                if (state != 24) {
+                if (state != 27) {
                     $(getSection()).css('display', 'none');
                     ++state;
                     $(getSection()).css('display', 'block');
                 } else {
                     window.location.href = "G2.html";
+                }
+                if (state == 3) {
+                    checkStorySound();
+                    document.getElementById('soundEffect').play();
+                }
+                if (state == 14) {
+                    checkStorySound();
+                    document.getElementById('soundEffect1').play();
                 }
             });
         });
@@ -45,6 +53,8 @@
 </head>
 
 <body>
+    <audio id="soundEffect" src="../../src/story/people.mp3" preload="auto" hidden='hidden'></audio>
+    <audio id="soundEffect1" src="../../src/story/music.mp3" preload="auto" hidden='hidden'></audio>
     <section>
         <div class="backSection" style="background-image: url('../../src/story/gym.webp');">
             <div id="S1" style="display:block">
@@ -68,17 +78,23 @@
             </div>
             <div id="S4" style="display:none">
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">哇 這裡還真是熱鬧</div>
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">哇 這裡還真是熱鬧。</div>
                 </div>
             </div>
             <div id="S5" style="display:none">
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">但就是有夠擠的</div>
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">但就是有夠擠的。</div>
                 </div>
             </div>
             <div id="S6" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">嗯?</div>
+                </div>
+            </div>
+            <div id="S7" style="display:none">
                 <div class="photoSection">
                     <div class="peopleOne" style="background-image: url('../../src/story/campA.webp');">
 
@@ -89,7 +105,7 @@
                     <div class="speakerText">快來加入登山社喔!!!</div>
                 </div>
             </div>
-            <div id="S7" style="display:none">
+            <div id="S8" style="display:none">
                 <div class="photoSection">
                     <div class="peopleOne" style="background-image: url('../../src/story/campB.webp');">
 
@@ -100,37 +116,37 @@
                     <div class="speakerText">加入之後就可以一直一直享受露營生活喔!!!</div>
                 </div>
             </div>
-            <div id="S8" style="display:none">
+            <div id="S9" style="display:none">
                 <div class="photoSection">
                     <div class="peopleOne" style="background-image: url('../../src/story/campC.webp');">
                     </div>
                 </div>
                 <div class="textSection">
                     <div class="speakerName">登山社社員C</div>
-                    <div class="speakerText">還有很多漂亮的風景可以讓你盡情的拍</div>
+                    <div class="speakerText">還有很多漂亮的風景可以讓你盡情的拍。</div>
                 </div>
             </div>
-            <div id="S9" style="display:none">
+            <div id="S10" style="display:none">
                 <div class="photoSection">
                     <div class="peopleOne" style="background-image: url('../../src/story/rockA.webp');">
                     </div>
                 </div>
                 <div class="textSection">
                     <div class="speakerName">輕音部社員A</div>
-                    <div class="speakerText">歡…歡…歡迎光臨輕音部</div>
+                    <div class="speakerText">歡、歡迎光臨輕音部。</div>
                 </div>
             </div>
-            <div id="S10" style="display:none">
+            <div id="S11" style="display:none">
                 <div class="photoSection">
                     <div class="peopleOne" style="background-image: url('../../src/story/rockB.webp');">
                     </div>
                 </div>
                 <div class="textSection">
                     <div class="speakerName">輕音部社員B</div>
-                    <div class="speakerText">在這裡不但可以盡情的練習音樂</div>
+                    <div class="speakerText">在這裡不但可以盡情的練習音樂。</div>
                 </div>
             </div>
-            <div id="S11" style="display:none">
+            <div id="S12" style="display:none">
                 <div class="photoSection">
                     <div class="peopleOne" style="background-image: url('../../src/story/rockC.webp');">
                     </div>
@@ -140,31 +156,42 @@
                     <div class="speakerText">最重要的是跟大家一起盡情的玩樂!!!</div>
                 </div>
             </div>
-            <div id="S12" style="display:none">
+            <div id="S13" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">(…這裡的每一個人都好活潑喔!)</div>
+                </div>
+            </div>
+            <div id="S14" style="display:none">
                 <div class="textSection">
                     <div class="speakerText">(音樂聲)</div>
                 </div>
             </div>
-            <div id="S13" style="display:none">
+            <div id="S15" style="display:none">
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">(好響亮喔)</div>
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">(聲音好響亮喔)</div>
                 </div>
             </div>
-
-            <div id="S14" style="display:none">
+            <div id="S16" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">(但究竟是哪一個社團?)</div>
+                </div>
+            </div>
+            <div id="S17" style="display:none">
                 <div class="textSection">
                     <div class="speakerName">???</div>
                     <div class="speakerText">你喜歡吹奏部嗎?</div>
                 </div>
             </div>
-            <div id="S15" style="display:none">
+            <div id="S18" style="display:none">
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
+                    <div class="speakerName">佐藤司</div>
                     <div class="speakerText">額啊啊!嚇死我了</div>
                 </div>
             </div>
-            <div id="S16" style="display:none">
+            <div id="S19" style="display:none">
                 <div class="photoSection">
                     <div class="peopleOne" style="background-image: url('../../src/story/kumiko.webp');">
                     </div>
@@ -174,7 +201,7 @@
                     <div class="speakerText">我想說看你還蠻有興趣的樣子</div>
                 </div>
             </div>
-            <div id="S17" style="display:none">
+            <div id="S20" style="display:none">
                 <div class="photoSection">
                     <div class="peopleOne" style="background-image: url('../../src/story/kumiko.webp');">
                     </div>
@@ -185,13 +212,13 @@
                 </div>
             </div>
 
-            <div id="S18" style="display:none">
+            <div id="S21" style="display:none">
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">不會 不會，我非常喜歡你們的表演</div>
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">沒有這回事，我非常喜歡你們的表演唷~</div>
                 </div>
             </div>
-            <div id="S19" style="display:none">
+            <div id="S22" style="display:none">
                 <div class="photoSection">
                     <div class="peopleOne" style="background-image: url('../../src/story/mizore.webp');">
                     </div>
@@ -201,17 +228,27 @@
                     <div class="speakerText">真的嗎?</div>
                 </div>
             </div>
-            <div id="S20" style="display:none">
+            <div id="S23" style="display:none">
                 <div class="photoSection">
                     <div class="peopleOne" style="background-image: url('../../src/story/mizore.webp');">
                     </div>
                 </div>
                 <div class="textSection">
                     <div class="speakerName">霙</div>
-                    <div class="speakerText">恩 我好開心</div>
+                    <div class="speakerText">我好開心~</div>
                 </div>
             </div>
-            <div id="S21" style="display:none">
+            <div id="S24" style="display:none">
+                <div class="photoSection">
+                    <div class="peopleOne" style="background-image: url('../../src/story/yo.webp');">
+                    </div>
+                </div>
+                <div class="textSection">
+                    <div class="speakerName">優子</div>
+                    <div class="speakerText">你好 初次見面，我是這裡的部長，叫我優子就可以了。</div>
+                </div>
+            </div>
+            <div id="S25" style="display:none">
                 <div class="photoSection">
                     <div class="peopleOne" style="background-image: url('../../src/story/yo.webp');">
                     </div>
@@ -221,17 +258,7 @@
                     <div class="speakerText">要不要我來教你樂器相關的基礎知識呢?</div>
                 </div>
             </div>
-            <div id="S22" style="display:none">
-                <div class="photoSection">
-                    <div class="peopleOne" style="background-image: url('../../src/story/yo.webp');">
-                    </div>
-                </div>
-                <div class="textSection">
-                    <div class="speakerName">優子</div>
-                    <div class="speakerText">我是這裡的部長</div>
-                </div>
-            </div>
-            <div id="S23" style="display:none">
+            <div id="S26" style="display:none">
                 <div class="photoSection">
                     <div class="peopleOne" style="background-image: url('../../src/story/yo.webp');">
                     </div>
@@ -241,9 +268,9 @@
                     <div class="speakerText">我會一步一步的教你</div>
                 </div>
             </div>
-            <div id="S24" style="display:none">
+            <div id="S27" style="display:none">
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
+                    <div class="speakerName">佐藤司</div>
                     <div class="speakerText">好 我試試看!</div>
                 </div>
             </div>

@@ -5,7 +5,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../stylesheet/stylesheet.css">
     <link rel="stylesheet" href="../../stylesheet/story.css">
-    <link rel="preload" href="../../src/story/final.webp" as="image">
+    <link rel="preload" href="../../src/story/insideMusic.webp" as="image">
+    <link rel="prefetch" href="../../src/story/yo.webp" as="image">
+    <link rel="prefetch" href="../../src/story/mizore.webp" as="image">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,12 +25,16 @@
                 window.location.href = "../menu.html";
             });
             $('.textSection').click(function() {
-                if (state != 2) {
+                if (state != 7) {
                     $(getSection()).css('display', 'none');
                     ++state;
                     $(getSection()).css('display', 'block');
                 } else {
-                    window.location.href = "../menu.html";
+                    window.location.href = "P20.html";
+                }
+                if (state == 5) {
+                    checkStorySound();
+                    document.getElementById('soundEffect').play();
                 }
             });
         });
@@ -36,19 +42,66 @@
 </head>
 
 <body>
+    <audio id="soundEffect" src="../../src/story/clap.mp3" preload="auto" hidden='hidden'></audio>
     <section>
-        <div class="backSection" style="background-image: url('../../src/story/final.webp');">
-
+        <div class="backSection" style="background-image: url('../../src/story/insideMusic.webp');background-size: cover;">
             <div id="S1" style="display:block">
+                <div class="titleSection">
+                    <div class="titleText">吹奏比賽結果發表</div>
+                </div>
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">啊~轉眼間就已經年底了，事到如今也發生了許多大小事，儘管遇到了許多挫折，但我還是有堅持下去，但回想剛入學的我人不熟地不熟，而現在則交到許多要好的朋友以及有趣的社團。總比在高中時一直死讀書還要好，畢竟大學死讀書是無法享受大學生活的!難…難不成 這就是所謂的青春嗎(哭)</div>
                 </div>
             </div>
             <div id="S2" style="display:none">
                 <div class="textSection">
-
-                    <div class="speakerText">劇情結束 end</div>
+                    <div class="speakerName">廣播</div>
+                    <div class="speakerText">…接下來公布前三名
+                    </div>
+                </div>
+            </div>
+            <div id="S3" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">廣播</div>
+                    <div class="speakerText">第三名 XX大學，第二名 OO大學
+                    </div>
+                </div>
+            </div>
+            <div id="S4" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">廣播</div>
+                    <div class="speakerText">最後我們的第一名是…勝利大學
+                    </div>
+                </div>
+            </div>
+            <div id="S5" style="display:none">
+                <div class="textSection">
+                    <div class="speakerText">(鼓掌聲)
+                    </div>
+                </div>
+            </div>
+            <div id="S6" style="display:none">
+                <div class="photoSection">
+                    <div class="peopleTwo" style="background-image: url('../../src/story/mizore.webp');background-position: right;">
+                    </div>
+                    <div class="peopleTwo" style="background-image: url('../../src/story/kumiko2.webp');left: 50vw;background-position: left;">
+                    </div>
+                </div>
+                <div class="textSection">
+                    <div class="speakerName">其他社員</div>
+                    <div class="speakerText">
+                        太好了!!!
+                    </div>
+                </div>
+            </div>
+            <div id="S7" style="display:none">
+                <div class="photoSection">
+                    <div class="peopleOne" style="background-image: url('../../src/story/yo.webp');">
+                    </div>
+                </div>
+                <div class="textSection">
+                    <div class="speakerName">優子</div>
+                    <div class="speakerText">多虧大家的努力，我們才能得到第一名!!!
+                    </div>
                 </div>
             </div>
         </div>

@@ -5,8 +5,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../stylesheet/stylesheet.css">
     <link rel="stylesheet" href="../../stylesheet/story.css">
-    <link rel="preload" href="../../src/story/bedroomNight.webp" as="image">
-    <link rel="prefetch" href="../../src/story/kyon2.webp" as="image">
+    <link rel="preload" href="../../src/story/outsideMusic1.webp" as="image">
+    <link rel="prefetch" href="../../src/story/yo.webp" as="image">
+    <link rel="prefetch" href="../../src/story/mizore.webp" as="image">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,12 +25,12 @@
                 window.location.href = "../menu.html";
             });
             $('.textSection').click(function() {
-                if (state != 5) {
+                if (state != 14) {
                     $(getSection()).css('display', 'none');
                     ++state;
                     $(getSection()).css('display', 'block');
                 } else {
-                    window.location.href = "G1.html";
+                    window.location.href = "P21.html";
                 }
             });
         });
@@ -38,23 +39,26 @@
 
 <body>
     <section>
-        <div class="backSection" style="background-image: url('../../src/story/bedroomNight.webp');">
+        <div class="backSection" style="background-image: url('../../src/story/outsideMusic1.webp');background-size: cover;">
             <div id="S1" style="display:block">
                 <div class="titleSection">
-                    <div class="titleText">宿舍房間</div>
+                    <div class="titleText">音樂廳外面</div>
                 </div>
                 <div class="textSection">
                 </div>
             </div>
             <div id="S2" style="display:none">
                 <div class="textSection">
-                    <div class="speakerText">距離新生聚會已經過了一段時間，而佐藤司也已經跟奉太郎打成一片</div>
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">嗯?
+                    </div>
                 </div>
             </div>
             <div id="S3" style="display:none">
                 <div class="textSection">
                     <div class="speakerName">佐藤司</div>
-                    <div class="speakerText">欸奉太郎~ 要不要一起打電動阿?</div>
+                    <div class="speakerText">是奉太郎嗎?
+                    </div>
                 </div>
             </div>
             <div id="S4" style="display:none">
@@ -64,19 +68,83 @@
                 </div>
                 <div class="textSection">
                     <div class="speakerName">奉太郎</div>
-                    <div class="speakerText">好啊好啊 當然可以啊</div>
+                    <div class="speakerText">真的是太好了，恭喜你們拿到第一名</div>
                 </div>
             </div>
             <div id="S5" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">我真的是非常 非常 非常 認真的練習呢!
+                    </div>
+                </div>
+            </div>
+            <div id="S6" style="display:none">
                 <div class="photoSection">
                     <div class="peopleOne" style="background-image: url('../../src/story/kyon2.webp');">
                     </div>
                 </div>
                 <div class="textSection">
                     <div class="speakerName">奉太郎</div>
-                    <div class="speakerText">我們開始玩吧!</div>
+                    <div class="speakerText">嗯 我一直都有看在眼裡</div>
                 </div>
             </div>
+            <div id="S7" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">如果沒有你的加油打氣，我可能就沒辦法吹奏出完美的演奏了
+                    </div>
+                </div>
+            </div>
+            <div id="S8" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">奉太郎</div>
+                    <div class="speakerText">(臉紅)
+                    </div>
+                </div>
+            </div>
+            <div id="S9" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">女助教</div>
+                    <div class="speakerText">辛苦你啦~
+                    </div>
+                </div>
+            </div>
+            <div id="S10" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">妳也來看我比賽嗎?
+                    </div>
+                </div>
+            </div>
+            <div id="S11" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">女助教</div>
+                    <div class="speakerText">我也想替你加油打氣。
+                    </div>
+                </div>
+            </div>
+            <div id="S12" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">女助教</div>
+                    <div class="speakerText">你可是我最棒的學生呢!
+                    </div>
+                </div>
+            </div>
+            <div id="S13" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">謝、謝謝大家，我真的感到非常開心!!!
+                    </div>
+                </div>
+            </div>
+            <div id="S14" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">(這絕對是我人生中過得最快樂的一天!)
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
     <div class="footerLeft">

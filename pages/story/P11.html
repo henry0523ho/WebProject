@@ -5,9 +5,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../stylesheet/stylesheet.css">
     <link rel="stylesheet" href="../../stylesheet/story.css">
-    <link rel="preload" href="../../src/story/hallway.webp" as="image">
+    <link rel="preload" href="../../src/story/bedroom.webp" as="image">
     <link rel="prefetch" href="../../src/story/kyon2.webp" as="image">
-    <link rel="prefetch" href="../../src/story/teacher.webp" as="image">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,12 +24,12 @@
                 window.location.href = "../menu.html";
             });
             $('.textSection').click(function() {
-                if (state != 12) {
+                if (state != 3) {
                     $(getSection()).css('display', 'none');
                     ++state;
                     $(getSection()).css('display', 'block');
                 } else {
-                    window.location.href = "G5.html";
+                    window.location.href = "P12.html";
                 }
             });
         });
@@ -39,18 +38,19 @@
 
 <body>
     <section>
-        <div class="backSection" style="background-image: url('../../src/story/hallway.webp');background-size: cover;">
+        <div class="backSection" style="background-image: url('../../src/story/bedroom.webp');background-size: cover;">
+
             <div id="S1" style="display:block">
-                <div class="titleSection">
-                    <div class="titleText">學校裡面</div>
-                </div>
                 <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">(咦?!好奇妙的感覺，明明只是玩猜拳遊戲，但不知道為什麼前面的煩惱通通都不見了。)
+                    </div>
                 </div>
             </div>
             <div id="S2" style="display:none">
                 <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">我們去找助教吧
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">(我出門走走好了。)
                     </div>
                 </div>
             </div>
@@ -61,79 +61,12 @@
                 </div>
                 <div class="textSection">
                     <div class="speakerName">奉太郎</div>
-                    <div class="speakerText">抱歉，我古典部臨時有事情，所以我沒辦法陪你去
+                    <div class="speakerText">對了，我覺得我們可以去向助教問問題，說不定問題就解決了!
                     </div>
                 </div>
             </div>
-            <div id="S4" style="display:none">
-                <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">看來今天我只能一個人去了…
-                    </div>
-                </div>
-            </div>
-            <div id="S5" style="display:none">
-                <div class="textSection">
-                    <div class="speakerText">(敲門聲)
-                    </div>
-                </div>
-            </div>
-            <div id="S6" style="display:none">
-                <div class="textSection">
-                    <div class="speakerName">???</div>
-                    <div class="speakerText">請進
-                    </div>
-                </div>
-            </div>
-            <div id="S7" style="display:none">
-                <div class="textSection">
-                    <div class="speakerText">(開門聲)
-                    </div>
-                </div>
-            </div>
-            <div id="S8" style="display:none">
-                <div class="textSection">
-                    <div class="speakerName">???</div>
-                    <div class="speakerText">請問找我有什麼事嗎?
-                    </div>
-                </div>
-            </div>
-            <div id="S9" style="display:none">
-                <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">不好意思，我想找一下這裡的助教
-                    </div>
-                </div>
-            </div>
-            <div id="S10" style="display:none">
-                <div class="photoSection">
-                    <div class="peopleOne" style="background-image: url('../../src/story/teacher.webp');">
-                    </div>
-                </div>
-                <div class="textSection">
-                    <div class="speakerName">女助教</div>
-                    <div class="speakerText">我就是助教本人喔~
-                    </div>
-                </div>
-            </div>
-            <div id="S11" style="display:none">
-                <div class="photoSection">
-                    <div class="peopleOne" style="background-image: url('../../src/story/teacher.webp');">
-                    </div>
-                </div>
-                <div class="textSection">
-                    <div class="speakerName">女助教</div>
-                    <div class="speakerText">有什麼問題都可以問我
-                    </div>
-                </div>
-            </div>
-            <div id="S12" style="display:none">
-                <div class="textSection">
-                    <div class="speakerName">阿明</div>
-                    <div class="speakerText">好的!
-                    </div>
-                </div>
-            </div>
+
+
         </div>
     </section>
     <div class="footerLeft">

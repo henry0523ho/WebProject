@@ -65,7 +65,7 @@
                         let state = getInput();
                         if (state == 0) {
                             setChatName(inputTMP);
-                            $('#inputSection').attr('placeholder', '輸入訊息')
+                            $('#inputSection').attr('placeholder', '')
                         } else {
                             $('#inputSection').attr('placeholder', '名稱輸入有誤，請輸入名稱:')
                         }
@@ -86,7 +86,7 @@
                     if (getChatName() == "") {
                         $('#inputSection').attr('placeholder', '請輸入名稱:')
                     } else {
-                        $('#inputSection').attr('placeholder', '輸入訊息')
+                        $('#inputSection').attr('placeholder', '')
                     }
                 }
             })

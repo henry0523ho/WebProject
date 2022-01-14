@@ -24,12 +24,20 @@
                 window.location.href = "../menu.html";
             });
             $('.textSection').click(function() {
-                if (state != 3) {
+                if (state != 13) {
                     $(getSection()).css('display', 'none');
                     ++state;
                     $(getSection()).css('display', 'block');
                 } else {
-                    window.location.href = "G6.html";
+                    window.location.href = "G5.html";
+                }
+                if (state == 6) {
+                    checkStorySound();
+                    document.getElementById('soundEffect').play();
+                }
+                if (state == 8) {
+                    checkStorySound();
+                    document.getElementById('soundEffect1').play();
                 }
             });
         });
@@ -37,35 +45,108 @@
 </head>
 
 <body>
+    <audio id="soundEffect" src="../../src/story/knock.mp3" preload="auto" hidden='hidden'></audio>
+    <audio id="soundEffect1" src="../../src/story/openDoor.mp3" preload="auto" hidden='hidden'></audio>
     <section>
         <div class="backSection" style="background-image: url('../../src/story/classroom.webp');background-size: cover;">
 
             <div id="S1" style="display:block">
                 <div class="titleSection">
-                    <div class="titleText">教室</div>
+                    <div class="titleText">學校裡面</div>
                 </div>
                 <div class="textSection">
                 </div>
             </div>
             <div id="S2" style="display:none">
-                <div class="photoSection">
-                    <div class="peopleOne" style="background-image: url('../../src/story/teacherBlack.webp');">
-                    </div>
-                </div>
                 <div class="textSection">
-                    <div class="speakerName">教授</div>
-                    <div class="speakerText">各位同學，要準備發考卷了
+                    <div class="speakerText">佐藤司跟著奉太郎去詢問女助教問題，結果…
                     </div>
                 </div>
             </div>
             <div id="S3" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">我們去找助教吧!
+                    </div>
+                </div>
+            </div>
+            <div id="S4" style="display:none">
                 <div class="photoSection">
-                    <div class="peopleOne" style="background-image: url('../../src/story/teacherBlack.webp');">
+                    <div class="peopleOne" style="background-image: url('../../src/story/kyon2.webp');">
                     </div>
                 </div>
                 <div class="textSection">
-                    <div class="speakerName">教授</div>
-                    <div class="speakerText">拿到考卷之後就開始作答
+                    <div class="speakerName">奉太郎</div>
+                    <div class="speakerText">抱歉，我古典部臨時有事情，所以我沒辦法陪你去。
+                    </div>
+                </div>
+            </div>
+            <div id="S5" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">看來今天我只能一個人去了…
+                    </div>
+                </div>
+            </div>
+            <div id="S6" style="display:none">
+                <div class="textSection">
+                    <div class="speakerText">(敲門聲)
+                    </div>
+                </div>
+            </div>
+            <div id="S7" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">???</div>
+                    <div class="speakerText">請進。
+                    </div>
+                </div>
+            </div>
+            <div id="S8" style="display:none">
+                <div class="textSection">
+                    <div class="speakerText">(開門聲)
+                    </div>
+                </div>
+            </div>
+            <div id="S9" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">???</div>
+                    <div class="speakerText">請問找我有什麼事嗎?
+                    </div>
+                </div>
+            </div>
+            <div id="S10" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">不好意思，我想找一下這裡的助教。
+                    </div>
+                </div>
+            </div>
+            <div id="S11" style="display:none">
+                <div class="photoSection">
+                    <div class="peopleOne" style="background-image: url('../../src/story/teacher.webp');">
+                    </div>
+                </div>
+                <div class="textSection">
+                    <div class="speakerName">女助教</div>
+                    <div class="speakerText">我就是助教本人喔~
+                    </div>
+                </div>
+            </div>
+            <div id="S12" style="display:none">
+                <div class="photoSection">
+                    <div class="peopleOne" style="background-image: url('../../src/story/teacher.webp');">
+                    </div>
+                </div>
+                <div class="textSection">
+                    <div class="speakerName">女助教</div>
+                    <div class="speakerText">有什麼問題都可以問我。
+                    </div>
+                </div>
+            </div>
+            <div id="S13" style="display:none">
+                <div class="textSection">
+                    <div class="speakerName">佐藤司</div>
+                    <div class="speakerText">好的!
                     </div>
                 </div>
             </div>
