@@ -135,15 +135,17 @@
 
         function getData() {
             firebase.database().ref('chat').orderByChild('time').limitToLast(showLength).on('child_added', function(snap) {
-                console.log(snap)
+                // console.log(snap)
                 let obj = {
                     name: snap.val().name,
                     time: snap.val().time,
                     text: snap.val().text,
                 }
-                localData.shift()
-                localData.push(obj);
-                showData();
+                if (obj.time != localData[localData.length - 1].time) {
+                    localData.shift()
+                    localData.push(obj);
+                    showData();
+                }
             });
 
         }
@@ -162,7 +164,12 @@
         function showTime(inputTime) {
             if (inputTime == "") return '';
             let t = new Date(inputTime);
-            return (t.getMonth() + 1) + '/' + t.getDate() + '-' + t.getHours() + ':' + t.getMinutes();
+            return twoBit(t.getMonth() + 1) + '/' + twoBit(t.getDate()) + '-' + twoBit(t.getHours()) + ':' + twoBit(t.getMinutes());
+        }
+
+        function twoBit(x) {
+            if (x < 10) return "0" + x;
+            else return x;
         }
     </script>
 </head>
