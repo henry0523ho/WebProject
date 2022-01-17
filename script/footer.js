@@ -1,7 +1,7 @@
 $(document).ready(function() {
     checkSound();
     $('#docButton').click(function() {
-        window.location.href = "../src/網站介面.pptx";
+        window.location.href = "../src/繽紛的大學日記-00957104+00957115.pptx";
     });
     $('#soundButton').click(function() {
         checkSound();
