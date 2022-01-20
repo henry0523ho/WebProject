@@ -71,10 +71,24 @@
     <script>
         $(document).ready(function() {
 
+            checkSave();
             $('#backButton').click(function() {
                 window.location.href = "home.html";
             });
 
+            $('#continueGameButton').click(function() {
+                let lnk = "story/P";
+                lnk += localStorage.getItem('gameSave');
+                lnk += ".html";
+                window.location.href = lnk;
+            });
+            $('#reloadGameButton').click(function() {
+                let ret = confirm('確認重設遊戲進度?');
+                if (ret == true) {
+                    localStorage.removeItem('gameSave');
+                }
+                checkSave();
+            });
             $('#startGameButton').click(function() {
                 window.location.href = "story/P1.html";
             });
@@ -85,6 +99,18 @@
                 window.location.href = "games.html";
             });
 
+            $('#continueGameButton').mouseenter(function() {
+                $('#startGameArticle').css('animation', 'fadeIn 1s forwards');
+                $('#startGameArticle').css('display', 'block');
+            }).mouseleave(function() {
+                $('#startGameArticle').css('display', 'none');
+            });
+            $('#reloadGameButton').mouseenter(function() {
+                $('#reloadGameArticle').css('animation', 'fadeIn 1s forwards');
+                $('#reloadGameArticle').css('display', 'block');
+            }).mouseleave(function() {
+                $('#reloadGameArticle').css('display', 'none');
+            });
             $('#startGameButton').mouseenter(function() {
                 $('#startGameArticle').css('animation', 'fadeIn 1s forwards');
                 $('#startGameArticle').css('display', 'block');
@@ -104,6 +130,16 @@
                 $('#selectGameArticle').css('display', 'none');
             });
         });
+
+        function checkSave() {
+            if (localStorage.getItem('gameSave')) {
+                $('#newGame').css('display', 'none');
+                $('#oldGame').css('display', 'block');
+            } else {
+                $('#newGame').css('display', 'block');
+                $('#oldGame').css('display', 'none');
+            }
+        }
     </script>
 </head>
 
@@ -115,7 +151,18 @@
         <aside>
             <div style="height:28%;"></div>
             <div style="height:calc(100%/3);">
-                <p>
+                <p id="oldGame">
+                    <button id="continueGameButton" class="btn btn-primary btn-lg" type="button" style="width: 60%;">
+                        <h2 style="margin:0px;">繼續遊戲</h2>
+                    </button>
+                    <button id="reloadGameButton" class="btn btn-outline-danger btn-lg" type="button" style="width: 10%;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="38px" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+  <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+</svg>
+                    </button>
+                </p>
+                <p id="newGame">
                     <button id="startGameButton" class="btn btn-primary btn-lg" type="button" style="width: 70%;">
                         <h2 style="margin:0px;">開始新遊戲</h2>
                     </button>
@@ -137,6 +184,12 @@
             <div style="height:80%;width:100%;">
                 <div style="height:100%;width:10%;float:left;"></div>
                 <div style="height:100%;width:80%;float:left;">
+                    <div id="reloadGameArticle" style="display:none;text-align: center;">
+                        <img src="../src/screenShot/start.webp" class="articlePhoto">
+                        <div class="articleText">
+                            <h3>重設遊戲進度</h3>
+                        </div>
+                    </div>
                     <div id="startGameArticle" style="display:none;text-align: center;">
                         <img src="../src/screenShot/start.webp" class="articlePhoto">
                         <div class="articleText">
