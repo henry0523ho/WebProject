@@ -36,10 +36,14 @@
                 if (state == 4) {
                     checkStorySound();
                     document.getElementById('soundEffect').play();
-                }
-                if (state == 7) {
+                    document.getElementById('soundEffect1').pause();
+                } else if (state == 7) {
                     checkStorySound();
                     document.getElementById('soundEffect1').play();
+                    document.getElementById('soundEffect').pause();
+                } else {
+                    document.getElementById('soundEffect').pause();
+                    document.getElementById('soundEffect1').pause();
                 }
             });
         });

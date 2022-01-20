@@ -43,10 +43,14 @@
                 if (state == 3) {
                     checkStorySound();
                     document.getElementById('soundEffect').play();
-                }
-                if (state == 14) {
+                    document.getElementById('soundEffect1').pause();
+                } else if (state == 14) {
                     checkStorySound();
                     document.getElementById('soundEffect1').play();
+                    document.getElementById('soundEffect').pause();
+                } else {
+                    document.getElementById('soundEffect').pause();
+                    document.getElementById('soundEffect1').pause();
                 }
             });
         });
