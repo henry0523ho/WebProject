@@ -56,6 +56,9 @@ let ANSSounds = [
 $(document).ready(function() {
     checkPoint = 0;
     // $('#sheetMusicGraph').attr('height', window.innerHeight * 0.4);
+    $('#startButton').click(function() {
+        $('#titleSection').css('display', 'none');
+    });
     drawPistons();
     $('#piston1').click(function() {
         pistonState[0] = 1 ^ pistonState[0];

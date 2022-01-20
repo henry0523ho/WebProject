@@ -20,6 +20,9 @@ $(document).ready(function() {
         }
         checkSound();
     });
+    $('#helpButton').click(function() {
+        alert("按 T 鍵進入聊天室\n按 Esc 鍵離開聊天室");
+    })
     $(window).keydown(function(e) {
         var event = window.event ? window.event : e;
 
